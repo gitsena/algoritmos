@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q14-FIGHT</title>
+</head>
+
+<body>
+    <button onclick="iniciar()">Iniciar Jogo</button>
+    <br</br>
+        <div id="div_luta" style="display: none;">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSM7_99URm4YI3Xmy0TasSRA3BUHIJTnQ24bw&usqp=CAU"
+                onclick="lutador1()" style="height: 100px;">
+            <div id="div_vida_l1" style="background-color: blue; height: 30px; width: 100%;"></div>
+            <br><br>
+            <img src="https://www.cineplayers.com/img/noticias/creed-ivan-drago-son-1516214757.jpg" onclick="lutador2()"
+                style="height: 100px;">
+            <div id="div_vida_l2" style="background-color: rgb(255, 94, 0); height: 40px; width: 100%;"></div>
+
+</body>
+
+</html>
+
+<script>
+    var golpe_lutador1 = 0;
+    var golpe_lutador2 = 0;
+    var vida_lutador1 = 100;
+    var vida_lutador2 = 100;
+
+
+    function iniciar() {
+        div_luta.style.display = "block"
+        golpe_lutador1 = 0;
+        golpe_lutador2 = 0;
+        vida_lutador1 = 100;
+        vida_lutador2 = 100;
+    }
+
+
+    function lutador1() {
+        golpe_lutador1 += 5;
+        vida_lutador1 -= 5;
+        b_golpes_lutos1.innerHTML = `Golpes sofridos pelo lutador 2: ${golpe_lutador1}`
+        vida_lutador1.style.width = vida_lutador1 + "%"
+    }
+    function lutador2() {
+        golpe_lutador2++;
+        vida_lutador2 -= 5;
+        b_golpes_lutos2.innerHTML = `Golpes sofridos pelo lutador 1: ${golpe_lutador2}`
+        vida_lutador2.style.width = vida_lutador2 = `${vida_lutador2}`
+    }
+</script>

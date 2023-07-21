@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex15 (9) Lista I</title>
+</head>
+
+<body>
+    <!-- 9. a) Pergunte para o usuário o nome de cada projeto que já criou na vida. Ele digita e clica em "Registrar projeto". Na medida que ele vai cadastrando, verifique quantos projetos já foram cadastrados e exiba o seguinte texto abaixo:
+            Você já fez X projetos. Por isso você é um profissional Z
+X é a quantidade de projetos e Z é seu nível de experiência, segundo estas regras:
+  0 a 4: Júnior
+  5 a 12: Pleno desde o projeto "nome do 5º projeto"
+  13 u mais: Sênior desde o projeto "nome do 13º projeto"
+b)  Tenha um botão “Mostrar Projetos” que quando clicado mostra os projetos cadastrados, um abaixo do outro, em ordem inversa ao que foi cadastrado. -->
+
+    Insira o nome do projeto criado: <input type="text" id="iptproj">
+    <button onclick="registrar()">Registrar projeto</button>
+
+    <br><br>
+    <div id="iddiv1"></div>
+</body>
+
+</html>
+<script>
+
+    var registro = []
+    function registrar() {
+        registro.push(iptproj.value);
+        iptproj.value = ''
+        console.log(registro)
+
+            if (registro.length < 5) {
+                iddiv1.innerHTML = `Você já fez ${registro.length} projetos. Por isso você é um profissional Júnior!<br>`;
+            } else if (registro.length < 12) {
+                iddiv1.innerHTML = `Você já fez ${registro.length} projetos. Por isso você é um profissional Pleno desde o projeto: ${registro[4]}! <br>`;
+            } else if (registro.length > 12) {
+                iddiv1.innerHTML = `Você já fez ${registro.length} projetos. Por isso você é um profissional Sênior desde o projeto: ${registro[12]}!<br>`;
+            }
+        }
+</script>

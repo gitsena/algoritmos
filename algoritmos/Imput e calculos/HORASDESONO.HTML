@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fase do Sono</title>
+</head>
+
+<body>
+    <h1><U>Horas De Sono</U></h1>
+    Total de horas dormida:
+    <input id= "sono" type="text"><br><br>
+    <button onclick="calcularsono()"> Calcular Sono:</button>
+    <div id=cal_sono></div>
+</body>
+
+</html>
+
+<Script>
+  function calcularsono() {
+      cal_sono.innerHTML = `Ao Dormir` + ' ' + sono.value + ' ' + 'horas, você dormiu:'
+
+      ;
+  }
+
+</Script>

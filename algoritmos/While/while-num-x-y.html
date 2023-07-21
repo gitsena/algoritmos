@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Entre com numero Inferior <input id="num_inf" type="text"><br><br>
+    Entre com numero Superior <input id="num_sup" type="text"><br><br>
+    <button onclick="mostrar()">Mostrar</button>
+    <div id="div_mostrar"></div>
+</body>
+
+</html>
+<script>
+    function mostrar() {
+        var ax_num = Number(num_inf.value);
+        div_mostrar.innerHTML = 'Numero do Intervalo';
+
+        while (ax_num <= num_sup.value) {
+            ax_num++;
+            div_mostrar.innerHTML += `<br>${ax_num}`;
+        }
+    }
+</script>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 17</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="form" id="divTela1">
+        <h2>Análise de performance de Alunos - Registro</h2>
+        <div>
+            Entre com o Nome do aluno: <input type="text" id="iptNome">
+        </div>
+        <div>
+            Entre com a Nota do aluno: <input type="number" id="iptNota">
+        </div>
+
+        <div>
+            <button onclick="registrar()">Registrar</button>
+            <button onclick="redirecionar()" class="marginLeft">Analisar</button>
+        </div>
+    </div>
+    <div class="form" id="divTela2" style="display: none;">
+        <h2>Análise de performance de Alunos - Pesquisa</h2>
+        Entre com o intervalo de notas:
+        <input type="number" id="iptNotaMin" placeholder="De" class="iptTiny">
+
+        <input type="number" id="iptNotaMax" placeholder="Até" class="iptTiny marginLeft">
+
+        <div>
+            <button onclick="pesquisar()">Pesquisar</button>
+        </div>
+    </div>
+    <div id="divLista">
+    </div>
+    <ul>
+
+    </ul>
+    <script>
+        var nomeAlunos = [], notaAlunos = [];
+        function registrar() {
+            var nome = iptNome.value, nota = Number(iptNota.value);
+
+            if (nome.length == 0) {
+                alert("Preencha o campo nome");
+            }
+            else if (nota.length == 0 || (nota < 0 || nota > 10)) {
+                alert("Nota deve ser entre 0 á 10");
+            }
+            else {
+
+                nomeAlunos.push(nome);
+                notaAlunos.push(nota);
+
+                divLista.innerHTML = "";
+                for (var i = nomeAlunos.length - 1; i >= 0; i--) {
+                    divLista.innerHTML += `
+                        Nome: ${nomeAlunos[i]}<br>
+                        Nota: ${(notaAlunos[i]).toFixed(2)}
+                        <br><br>
+                    `;
+                }
+            }
+        }
+
+        function redirecionar() {
+            divLista.innerHTML = "";
+            divTela1.style.display = "none";
+            divTela2.style.display = "block";
+
+        }
+
+        function pesquisar() {
+            var notaMin = Number(iptNotaMin.value),
+                notaMax = Number(iptNotaMax.value),
+                qtdAlunos = 0,
+                soma = 0,
+                media = 0,
+                maiorNota = notaAlunos[0],
+                menorNota = notaAlunos[0];
+
+            if (notaMin.length == 0 || (notaMin < 0 || notaMin > 10)) alert("Nota mínima deve ser entre 0 á 10");
+
+            else if (notaMax.length == 0 || (notaMax < 0 || notaMax > 10)) alert("Nota máxima deve ser entre 0 á 10");
+
+            else if (notaMin > notaMax) alert("Nota mínima deve ser menor que 0");
+
+            else {
+                divLista.innerHTML = "";
+
+                for (var i = 0; i < nomeAlunos.length; i++) {
+                    if (notaAlunos[i] >= notaMin && notaAlunos[i] <= notaMax) {
+                        qtdAlunos++;
+                        soma+=notaAlunos[i];
+                        if (notaAlunos[i] > maiorNota) maiorNota = notaAlunos[i];
+                        else if (notaAlunos[i] < menorNota) menorNota = notaAlunos[i];
+
+                        divLista.innerHTML += `O aluno ${nomeAlunos[i]} ficou com a nota ${notaAlunos[i]}<br>`;
+                    }
+                }
+
+                media = soma/qtdAlunos;
+
+                divLista.innerHTML += `<br>
+                    Total de alunos registrados: ${nomeAlunos.length}<br>
+
+                    Total de alunos listado: ${qtdAlunos} (com nota no intervalo informado)<br>
+
+                    Maior Nota = ${maiorNota.toFixed(1)}<br>
+
+                    Menor Nota = ${menorNota.toFixed(1)}<br>
+
+                    Média da Nota = ${media.toFixed(1)}
+                `
+            }
+        }
+    </script>
+</body>
+
+</html>

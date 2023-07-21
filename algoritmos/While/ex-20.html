@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20</title>
+</head>
+<body>
+    <h3>insira um número</h3>
+    <input type="number" id="nmr"> <br>
+    <button onclick="bt()">Surpresa</button> <br>
+    <div id="txt"></div>
+
+</body>
+</html>
+<script>
+
+    function bt(){
+        var num = nmr.value;
+        var cont = 0;
+        txt.innerHTML = '';
+        while (cont <= num)
+        txt.innerHTML += `${cont}`;
+        if (cont % 3 == 0 ) {
+            txt.innerHTML += `${cont} tri`;
+        } else if (cont % 5 == 0) {
+            txt.innerHTML += `${cont} penta`;
+        } else if ((cont % 3 == 0) && (cont % 5 ==0)) {
+            txt.innerHTML += `${cont} tri e penta`;
+        } 
+        cont ++;
+          
+        
+    }
+
+</script>

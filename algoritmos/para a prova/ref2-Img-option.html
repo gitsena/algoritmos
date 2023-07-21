@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>select-img</title>
+</head>
+<body>
+    <h2>Trocando imagens com select/options</h2>
+
+    Escolha a foto: 
+    <select id="sel_foto" onchange="mostrar()">
+        <option value="freeza.jpg">Freeza</option>
+        <option value="goku.jpg">Goku</option>
+    </select>
+
+    <img src="" id="img_foto" style="height: 150px;">
+</body>
+</html>
+<script>
+    function mostrar() {
+        img_foto.src = sel_foto.value;
+    }
+</script>

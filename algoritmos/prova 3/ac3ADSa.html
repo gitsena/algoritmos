@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC-3</title>
+</head>
+
+<body>
+    <h3>AllFat - Auxílio Alimentação</h3>
+    <div id="div1">
+        <b>Informe o valor do Benefício:</b> R$ <input id="valor" type="text"> <br><br>
+        <button onclick="cadastrar()">Cadastrar</button> <button onclick="pesquisar()">Pesquisar</button><br><br>
+        <b id="t_historico" style="display: none;">Histórico dos Benefícios</b>
+        <div id="text1"></div>
+    </div>
+    <div id="div2" style="display: none;">
+        <b>Informe o intervalo de valores para a pesquisa</b><br> De: R$ <input id="valor_a" type="text"> Até: R$ <input
+            id="valor_b" type="text">
+        <button onclick="resume()">Resumir Intervalo</button><br><br><b>Informe o valor a ser pesquisado </b><br>Valor: R$
+        <input id="b" type="text">
+        <button onclick="procurar()">Procurar Valor</button><br><br>
+        <div id="text2"></div> <b id="bb" style="display: none;">Busca por um valor de benefício</b>
+        <div id="db"></div>
+    </div>
+</body>
+
+</html>
+<script>
+    // Professor perdão, não deu tempo de arrumar o meu código, espero que isso não prejudique minha nota
+    var beneficio = [];
+    function procurar() {
+        text2.innerHTML = ''; valor_a.value = ''; valor_b.value = ''; var bu = Number(b.value);
+        if (bu == '' || bu < 3 || bu > 35) {
+            alert('Não foi possível fazer a busca! O valor a ser pesquisado precisa estar entre R$ 3,00 e R$ 35,00.');
+            b.value = '';
+        }
+        if (bu >= 3 && bu <= 35) {
+            db.innerHTML = ''; for (var index = 0; index < beneficio.length; index++) {
+                if (beneficio[index] == bu) { bb.style.display = 'block'; db.innerHTML += `O valor R$ ${beneficio[index]} foi encontrado na ${index + 1}ª ocorrência<br>`; }
+                if (beneficio.indexOf(bu) == - 1) {
+                    bb.style.display = 'block'; db.innerHTML = `O valor R$ ${bu} NÃO foi encontrado<br>`;
+                }
+            }
+        }
+    }
+    function pesquisar() {
+        if (beneficio.length > 0) {
+            div1.style.display = 'none'; valor.value = ''; div2.style.display = 'block';
+        } else { alert('Você não cadastrou nenhum benefício! Tente novamente.'); }
+    }
+    function resume() {
+        var idv = Number(d.value); var iav = Number(a.value); var ma = -99; var me = 99; var cr = 0; var ac = 0; var ps1 = 0; var ps2 = 0;
+        if (idv == '' || idv < 3 || iav == '' || iav > 35) {
+            alert('Inválido! Os benefícios precisam estar entre o intervalo de  R$ 3,00 e R$ 35,00! Tente novamente.');
+            d.value = ''; a.value = ''; text2.innerHTML = '';
+        }
+        if (idv > iav) {
+            alert('Inválido! O primeiro parâmetro do intervalo deve ser menor ou igual ao segundo parâmetro.');
+            d.value = ''; a.value = ''; text2.innerHTML = '';
+        }
+        if (idv != '' && idv >= 3 && iav != '' && iav <= 35 && idv <= iav) {
+            for (var index = 0; index < beneficio.length; index++) {
+                if (beneficio[index] >= idv && beneficio[index] <= iav) {
+                    ac = ac + beneficio[index]; cr++; 
+                    if (ma < beneficio[index]) { ma = beneficio[index]; ps1 = index}
+                    if (beneficio[index] < me) { me = beneficio[index]; ps2 = index}
+                }
+            
+            }
+            text2.innerHTML = `<b>Resumo dos Benefícios desse Intervalo</b>
+            <br>O MAIOR valor encontrado no intervalo informado foi R$ ${ma} na ${ps1 + 1}° ocorrencia 
+            <br>O MENOR valor encontrado no intervalo informado foi R$ ${me} na ${ps2 + 1}° ocorrencia 
+            <br>A MÉDIA dos valores do intervalo informado foi R$ ${((ac / cr).toFixed(2))}`;
+        }
+    }
+    function cadastrar() {
+        var be = Number(valor.value);
+        if (be == '' || be < 3 || be > 35) { alert('Inválido! Os benefícios precisam estar entre R$ 3,00 e R$ 35,00! Tente novamente.'); valor.value = ''; }
+        if (be != '' && be >= 3 && be <= 35) {
+            beneficio.push(be); valor.value = ''; text1.innerHTML = '';
+            for (var index = beneficio.length - 1; index >= 0; index--) 
+            { t_historico.style.display = 'block'; 
+            text1.innerHTML += `A ${index + 1}ª ocorrência é: R$ ${(beneficio[index]).toFixed(2)}<br>`; }
+        }
+    }
+</script>

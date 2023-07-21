@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Tabuada (1,10) </h1>
+    <select id="tabuada" onchange="mostrar()"> 
+        <option selected disabled value="">Selecione a tabuada... </option>
+        <option value="1">Tabuada do 1</option>
+        <option value="2">Tabuada do 2</option>
+        <option value="3">Tabuada do 3</option>
+        <option value="4">Tabuada do 4</option>
+        <option value="5">Tabuada do 5</option>
+        <option value="6">Tabuada do 6</option>
+        <option value="7">Tabuada do 7</option>
+        <option value="8">Tabuada do 8</option>
+        <option value="9">Tabuada do 9</option>
+        <option value="10">Tabuada do 10</option>
+
+    </select><br></br>
+    <div id= "mostrar_resultado"></div>
+</body>
+</html>
+      
+<script>
+  function mostrar() {
+      mostrar_resultado.innerHTML = 
+      
+      `A tabuada para este número é :<br>
+      ${tabuada.value} x 1 = ${tabuada.value * 1} <br>
+      ${tabuada.value} x 2 = ${tabuada.value * 2} <br>
+      ${tabuada.value} x 3 = ${tabuada.value * 3} <br>
+      ${tabuada.value} x 4 = ${tabuada.value * 4} <br>
+      ${tabuada.value} x 5 = ${tabuada.value * 5} <br>
+      ${tabuada.value} x 6 = ${tabuada.value * 6} <br>
+      ${tabuada.value} x 7 = ${tabuada.value * 7} <br>
+      ${tabuada.value} x 8 = ${tabuada.value * 8} <br>
+      ${tabuada.value} x 9 = ${tabuada.value * 9} <br>
+      ${tabuada.value} x 10 = ${tabuada.value * 10}`
+}
+</script>

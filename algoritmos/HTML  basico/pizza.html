@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza</title>
+</head>
+<body>
+    <h1>A historia de uma pizza</h1>
+<button onclick="chegou()">Acabou de Chegar</button>
+<button onclick="depois1minuto()">Depois de 1 Minuto</button>
+<button onclick="depois5minutos()">Depois de 5 Minutos</button>
+<button onclick="depois15minutos()">Depois de 15 Minutos</button>
+<br><br>
+<div id= "div_agora"></div>
+
+</body>
+</html>
+
+<script>
+function chegou(){
+    div_agora.innerHTML = '<img src="inteira.jpg" height="150px" >'
+}
+function depois1minuto(){
+    div_agora.innerHTML = '<img src="doispedaços.jpg" height="150px" >'
+}
+function depois5minutos(){
+    div_agora.innerHTML = '<img src="metade.jpg" height="150px" >'
+}
+function depois15minutos(){
+    div_agora.innerHTML = '<img src="resto.jpg" height="150px" >'
+}
+</script>

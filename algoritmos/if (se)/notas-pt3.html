@@ -1,0 +1,46 @@
+<center>
+    <!DOCTYPE html>
+    <html lang="pt">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NOTAS-PT2</title>
+    </head>
+
+    <body>
+        <h2 style="color: darkblue;">MINHAS NOTAS!</h2>
+        <input id='nome_aluno' type="text" placeholder="entre com seu nome">
+        <br><br>
+        <input id='primeira_nota' type="text" placeholder="entre com sua primeira nota">
+        <br><br>
+        <input id='segunda_nota' type="text" placeholder="entre com sua segunda nota">
+        <br><br>
+        <input id='terceira_nota' type="text" placeholder="entre com sua terceira nota">
+        <BR><BR>
+        <input id='nota_base' type="text" placeholder="entre com a nota base">
+        <br><br>
+        <button onclick="mostrar()">M0STRAR NOTA</button>
+        <div id="div_nota"></div>
+    </body>
+
+    <Script>
+        function mostrar() {
+            var soma_total = Number(primeira_nota.value) + Number(segunda_nota.value) + Number(terceira_nota.value)
+            var media_nota = soma_total / 3
+            var dez_porcento = media_nota * 10 / 100
+            var ax_final = dez_porcento + media_nota
+            div_nota.innerHTML = ('a soma total das notas do aluno ' + `${nome_aluno.value} ` + 'é ' + `${soma_total}` + '<br>')
+            if (media_nota >= nota_base.value) {
+                div_nota.innerHTML += (`O aluno  ${nome_aluno.value} foi aprovado e ficou com a media ${media_nota.toFixed(2)} <br>`)
+
+                div_nota.innerHTML += ('A media objetivo para o proximo semestre para o aluno ' + `${nome_aluno.value} ` + 'é de: ' + `${ax_final}` + '<br>')
+            }
+            else {
+                (media_nota < nota_base.value)
+                div_nota.innerHTML += ('O aluno  ' + nome_aluno.value + ' ficou com a media ' + `${ax_final.toFixed(2)}  Infelizmente você foi reprovado!`)
+            }
+        }
+    </Script>
+</center>

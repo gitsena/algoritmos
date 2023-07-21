@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 20 (desafio). Crie um programa em HTML/JS o qual:
+a) Deve ter um botão chamado "Curto 3 e 5!"
+b) Ao clicar nesse botão, devem aparecer QUASE todos os números entre 0 e 100, porém...
+c) Se o número for múltiplo de 3, ao invés do número exiba "É TRI!". Se o número for múltiplo de 5, ao invés do número exiba "É PENTA!". Se o número for múltiplo de 3 e também de 5, ao invés do número exiba "É TRI!É PENTA!".
+#Ficadica: Use a técnica de dedução de múltiplos por uso do resto da divisão
+  -->
+    <button onclick="botao()">Curto 3 e 5!</button>
+    <div id="mostrar"></div>
+</body>
+
+</html>
+<script>
+    var contador = 0
+    function botao() {
+        var multiplo_tri = contador * 3;
+        var multiplo_penta = contador * 5;
+        mostrar.innerHTML = '';
+        while (contador < 100) {
+            if (contador == multiplo_tri) {
+                contador++;
+                mostrar.innerHTML += `É TRI!É`
+
+            }
+            else if (contador == multiplo_penta){
+                contador++;
+                mostrar.innerHTML += `É PENTA`
+            }
+            else if (contador == multiplo_tri && contador == multiplo_penta ){
+                contador++;
+                mostrar.innerHTML += `É TRI!É PENTA!`
+            }
+        }
+    }
+</script>

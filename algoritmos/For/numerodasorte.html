@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira seu numero da sorte:<input id="num_sorte" type="text"><br><br>
+<button onclick="mostrar()">Mostrar</button><br>
+<div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+    function mostrar() {
+        
+        var  ax_sorte = Number(num_sorte.value)
+        div_mostrar.innerHTML = "";
+        num_sorte.value = "";
+        if (ax_sorte = "" || ax_sorte == 0) {
+            alert("Informe um numero da sorte");
+        }else{
+        mostrar()
+        }
+        function mostrar() {
+            for (var num = 1; num <= 20; num++) {
+                var sorte = (Math.random()*100).toFixed();
+                div_mostrar.innerHTML += `${num}° ${sorte} `;
+            
+                if (sorte == ax_sorte ) {
+                    div_mostrar.innerHTML += `<b> Você é uma pessoa de sorte, na ${num}° seu numero foi sorteado!</b><br>`;
+                    break
+                }
+                else {
+                    div_mostrar.innerHTML += `Você não está com sorte, seu numero não foi sorteado<br>`;
+
+            }
+        }
+    }
+    }
+</script>

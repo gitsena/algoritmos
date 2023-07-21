@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDA-camisetas</title>
+</head>
+
+<body>
+
+    <h2>SDA - AS MELHORES CAMISETAS DO BRASIL</h2>
+    Quantas Camiseta deseja: <input id="qtd_camiseta" type="text" placeholder="minimo 100 e maximo 2000">
+    <br><br>
+    <select id="tamanho">
+        <option value=" ">Selecione o Tamanho</option>
+        <option value="Tam P">Pequeno</option>
+        <option value="Tam G">Grande</option>
+    </select>
+    <select id="tipo">
+        <option value=" ">Selecione o modelo</option>
+        <option value="Camiseta Branca">Camisetas Brancas</option>
+        <option value="Camiseta Colorida">Camisetas Coloridas</option>
+    </select>
+    <br><br>
+    Qual a distancia para entrega:<input id="distancia" type="text" placeholder="ex.10km">
+    <br><br>
+    <div id="div_a">
+        <button onclick="orcar()">Orçar</button>
+    </div>
+    <div id="div_mostrar"></div>
+</body>
+
+</html>
+<script>
+    var valor_total = 0
+
+    function orcar() {
+        var ax_pc_unitario = Number(qtd_camiseta.value);
+        var ax_distancia = Number(distancia.value);
+        var ax_tamanho = tamanho.value;
+        var ax_tipo = tipo.value;
+        qtd_camiseta.value = ' ';
+        distancia.value = ' ';
+        tamanho.value = ' ';
+        tipo.value = ' ';
+
+        if (ax_pc_unitario < 100) {
+            div_mostrar.innerHTML = "Informe outra quantidade, Vendemos somente no atacado"
+        }
+        else if (ax_pc_unitario > 2000) {
+            div_mostrar.innerHTML = "Consulte nosso PCP (planejamento e controle da produção)"
+        }
+        else if (ax_distancia == 0 || ax_distancia == ' ') {
+            div_mostrar.innerHTML = "Informe a distância de entrega"
+        }
+        else if (ax_tamanho == " " || ax_tipo == " ") {
+            div_mostrar.innerHTML = "Selecione um Produto e Tamanho"
+        }
+        else {
+            div_a.style.display = 'none'
+            parte2()
+        }
+        function parte2() {
+            if (ax_tamanho == 'Tam P' && ax_tipo == 'Camiseta Branca') {
+                valor_total = ax_pc_unitario * 15
+
+                div_mostrar.innerHTML = ` Orçamento de vendas <br>
+                 Quantidade Solicitada: ${ax_pc_unitario} <br>
+                 Tamanho Selecionado: ${ax_tamanho} <br>
+                 Produto Selecionado: ${ax_tipo} <br>
+                 O valor total das mercadorias é de R$ ${valor_total}`
+            }
+            else if (ax_tamanho == 'Tam P' && ax_tipo == 'Camiseta Colorida') {
+                valor_total = ax_pc_unitario * 16
+            
+                div_mostrar.innerHTML = ` Orçamento de vendas <br>
+                 Quantidade Solicitada: ${ax_pc_unitario} <br>
+                 Tamanho Selecionado: ${ax_tamanho} <br>
+                 Produto Selecionado: ${ax_tipo} <br>
+                 O valor total das mercadorias é de R$ ${valor_total}`
+            }
+            else if (ax_tamanho == 'Tam G' && ax_tipo == 'Camiseta Branca') {
+                valor_total = ax_pc_unitario * 17
+             
+                div_mostrar.innerHTML = ` Orçamento de vendas <br>
+                 Quantidade Solicitada: ${ax_pc_unitario} <br>
+                 Tamanho Selecionado: ${ax_tamanho} <br>
+                 Produto Selecionado: ${ax_tipo} <br>
+                 O valor total das mercadorias é de R$ ${valor_total}`
+            }
+            else if (ax_tamanho == 'Tam G' && ax_tipo == 'Camiseta Colorida') {
+                valor_total = ax_pc_unitario * 18
+                
+                div_mostrar.innerHTML = ` Orçamento de vendas <br>
+                 Quantidade Solicitada: ${ax_pc_unitario} <br>
+                 Tamanho Selecionado: ${ax_tamanho} <br>
+                 Produto Selecionado: ${ax_tipo} <br>
+                 O valor total das mercadorias é de R$ ${valor_total}`
+            }
+        }
+    }
+</script>

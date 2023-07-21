@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- No filme clássico "Ghost, do outra lado da vida", o protagonista, para atazanar a vida da médium canta a seguinte canção...
+1 elefante incomoda muita gente!
+2 elefantes, incomodam, incomodam, muito mais!
+1 elefante incomoda muita gente!
+3 elefantes, incomodam, incomodam, incomodam, muito mais!
+1 elefante incomoda muita gente!
+4 elefantes, incomodam, incomodam, incomodam, incomodam, muito mais!
+... e assim por diante
+Crie um programa em HTML/JS o qual:
+a) Solicite ao usuário a quantidade elefantes
+b) Ao clicar em "Atazanar a médium", exiba sempre o trecho da canção de 1 elefante, seguido do trecho com 2 elefantes e depois 3... até a quantidade de elefantes indicado em a). Note que a palavra "incomodam" repete-se conforme essa mesma quantidade.
+Por exemplo, o se o usuário informar 4 em a), devem aparacer 3 estrofes, como no enunciado da questão, de "2 elefantes" até "4 elefantes" -->
+Inserir a quantidade de Elefantes<input id="qtd_elefante" type="text"><br><br>
+<button onclick="atazanar()">Atazanar</button><br><br>
+<div id="mostrar"></div>
+</body>
+</html>
+<script>
+    
+    function atazanar(){
+        var contador = 0
+        var ax_qtd_elefante = Number(qtd_elefante.value)
+        var frase = "incomodam, " 
+        mostrar.innerHTML = '';
+
+        while (contador < ax_qtd_elefante ){
+           if (contador % ax_qtd_elefante == 0 ){
+               contador++;
+               mostrar.innerHTML += `1 elefante incomoda muita gente! <br>`;
+            }
+            else {
+            contador++;
+            frase = frase + "incomodam, " 
+            mostrar.innerHTML += `${contador} elefantes, ${frase} muito mais!<br>`;
+            }
+        }
+    }
+</script>

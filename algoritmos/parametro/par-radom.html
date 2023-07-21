@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Numero Aleatorios</h1>
+    INICIO<input id="inicio" type="text" placeholder="apartir de 1"><br><br>
+    FINAL<input id="final" type="text" placeholder="menor que 20"><br><br>
+    <button onclick="mostrar()">Sortear</button>
+    <div id="text"></div>
+</body>
+
+</html>
+<script>
+    
+    
+    function mostrar() {
+        var ax_final = Number(final.value);
+        var ax_inicio = Number(inicio.value);
+        if (ax_inicio <= 0 || ax_final > 20 || ax_inicio > ax_final) {
+            alert("ERROR, Insira os valores de acordo com o ex")
+        }
+        else {
+            sortear(ax_inicio, ax_final)
+        }
+        function sortear(par_inicial, par_final) {
+            var result = Number(Math.random() * (par_final - par_inicial)) + par_inicial;
+            text.innerHTML += `<b>Numeros Sorteados<b><br> ${result.toFixed(2)}<br>`;
+        }
+    }
+
+</script>

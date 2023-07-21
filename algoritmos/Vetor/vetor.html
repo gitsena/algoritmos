@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- var vt_alunos = [];
+    para inserir novas ocorrencias 
+vt_alunos.push ("matheus")  -- matheus jhol mat guilherme
+*para saber o tamanho 
+vt_alunos.length
+*para saber o numero da posição do elemento pela descrição
+vt.alunos indexOf ("matheus") resultado é 1
+*para saber a posição de algum elemento so expecificar o numero
+vt_alunos [1] resultado jhol
+* para acessar a ocorrencia ulilizando uma variavel declarada ou variavel global
+var ax.qq = 0;
+vt_alunos [ax_qq] resultado é 
+* para acessar a ocorrencia ulilizando uma variavel declarada ou variavel global dentro de um lupping
+var ax.qq = 0;
+ax.qq++
+vt_alunos [ax_qq] resultado é 
+* para trocar algum elemento 
+vt_alunos=["martheus", "jhol", "mat"]
+vt_outro= ["abel", "maria"]
+vt_alunos= [2] = vt_outro [1] resultado é  vt_alunos ("")
+*para incluir direto em uma posição
+vt_aluno[9] = "sara"
+*para subistituir so expecificar a posição
+vt_aluno[9] = "Lucas"
+*para deletar ultilize o comando delete
+delete vt_aluno[9]
+* para mostrar visualizar o meu vetor 
+innerHTML = `vt_alunos` resultado é matheus, jhol, mat, gui , , , , , , , , sara
+sas virgulas são os buracos
+* para mostrar de forma classificada alfabetica ultilisar sort()
+o vetor uma vez definido sempre tera seu tamanho maximo
+-->
+<input id= "ipt_fruta" type="text" placeholder="Informe  a fruta"><br><br>
+<button onclick="cadastrar()">cadastrar</button><br>
+
+<button onclick="mostrar()">Mostrar</button><br><br>
+<div id="div_pesq"></div>
+</body>
+</html>
+<script>
+    frutas = []
+    function cadastrar(){
+    frutas.push(ipt_fruta.value)
+    ipt_fruta.value = '';
+    
+    function mostrar(){
+        div_pesq.innerHTML += `o meu vetor esta assim ${frutas}<br>`;
+        div_pesq.innerHTML += `A qantidade de ocorrencia é: ${frutas.length}<br><br>`;
+        div_pesq.innerHTML += `A primeira ocorrencia é: ${frutas[0]}<br>`;
+        div_pesq.innerHTML += `A ultima ocorrenciaé: ${frutas[frutas.length-1]}<br><br>`;
+
+
+    }
+    }
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira um numero<input onchange="mostrar()" id= "num" type="text"><br><br>
+    <div  id="div_msg"></div>
+</body>
+</html>
+<script>
+    function mostrar(){
+    div_msg.innerHTML = "";
+    for (var contador = 5; contador <= num.value; contador ++){
+        div_msg.innerHTML += `${contador} <br>`
+    }
+}
+</script>

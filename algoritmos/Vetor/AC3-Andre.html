@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AC-3</title>
+</head>
+
+<body>
+    <div class="form" id="Tela1">
+        <h1><b>AIIFat - Auxilio Alimentação</b></h1>
+        <b>Informe o Valor do Beneficio: </b><input placeholder="Entre 3 á 35" id="ipt_auxilio" type="text"><br><br>
+        <button onclick="cadastrar()">Cadastrar</button>
+        <button onclick="pesquisar()">Pesquisar</button><br><br>
+        <div id="text1"></div>
+    </div>
+    <div class="form" id="Tela2" style="display: none;">
+        <h1><b>AIIFat - Auxilio Alimentação</b></h1>
+        <b>Informe o Intervalo do Valores para pesquisa:</b> <br>
+        de <input id="valor1" type="text"> ate <input id="valor2" type="text">
+        <button onclick="resumo()">Resumir Intervalo</button><br><br>
+        <b>Informe o Valor para ser pesquisado:</b><br>
+        <input id="valor" type="text">
+        Valor:<button onclick="buscar()">Proucurar Valor</button><br><br>
+        <div id="text2"></div>
+</body>
+
+</html>
+<script>
+    var vt_beneficio = [];
+    
+    function cadastrar() {
+        var ax_auxilio = Number(ipt_auxilio.value)
+
+        if (ax_auxilio == '') {
+            alert("Error! Inserira um valor");
+        }
+        else if (ax_auxilio < 3 || ax_auxilio > 35) {
+            alert("Error! Verifica o valor inserido");
+        }
+        else {
+            vt_beneficio.push(ax_auxilio);
+            text1.innerHTML = "";
+            for (var index = vt_beneficio.length - 1; index >= 0; index--) {
+                text1.innerHTML += `A ${(index + 1)}º ocorrencia é R$${vt_beneficio[index]}<br>`;
+            }
+        }
+        ipt_auxilio.value = '';
+    }
+    function pesquisar() {
+
+        Tela1.style.display = "none";
+        Tela2.style.display = "block";
+
+    }
+
+    function resumo() {
+        var ax_valor1 = Number(valor1.value);
+        var ax_valor2 = Number(valor2.value);
+        var ax_menor = 99;
+        var ax_maior = - 99;
+        var ax_qtd = 0;
+        var ax_acm = 0;
+
+        if (ax_valor1 == '' || ax_valor1 == 0 || ax_valor2 == '' ||
+            ax_valor2 == 0) {
+            alert(`Informe alngum valor para calcular intervalo`);
+        }
+
+        else {
+            for (var index = 0; index < vt_beneficio.length; index++) {
+                if (vt_beneficio[index] >= ax_valor1 && vt_beneficio[index] <= ax_valor2) {
+                    if (vt_beneficio[index] < ax_menor) { ax_menor = vt_beneficio[index] }
+                    if (vt_beneficio[index] > ax_maior) { ax_maior = vt_beneficio[index] }
+                    ax_qtd++;
+                    ax_acm = ax_acm + vt_beneficio[index];
+                }
+            }
+            text2.innerHTML += `<b>Resumo dos Beneficios desse Intervalo</b><br>
+            A MAIOR valor encontrado no intervalo informado foi R$${ax_maior}<br>
+            O MENOR valor encontrado no intervalo informado foi R$${ax_menor}<br>
+            A Média dos valores do intervalo foi R$${(ax_acm / ax_qtd).toFixed(2)}<br>`
+
+        }
+    }
+
+    function buscar() {
+        var ax_valor = Number(valor.value);
+        text2.innerHTML = '';
+        var contador = 0
+        if (ax_valor == '') {
+            alert(`Informe algum valor para calcular`);
+        }
+
+        else if (vt_beneficio.indexOf(ax_valor) == -1) {
+            text2.innerHTML += `o Valor R$${ax_valor} NÃO foi encontrado `
+        }
+        else {
+            for (var index = 0; index < vt_beneficio.length; index++) {
+                if (vt_beneficio.indexOf[index] == vt_beneficio[ax_valor - 1]) {
+                    contador++;
+                }
+            }
+            text2.innerHTML += ` <b>Buscar um Valor de Beneficio</b><br> 
+            O valor ${ax_valor} foi encontrado na ${contador}º ocorrencia<br>`
+        }
+    }
+
+</script>

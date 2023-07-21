@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Entre com o limete superior
+    <input id="ipt_sup" onchange="mostrar()"><br>
+    <span id="span_msg"></span>
+</body>
+
+</html>
+<script>
+    function mostrar() {
+        var numero = 4;
+        var ax_ipt_sup = Number(ipt_sup.value);
+        span_msg.innerHTML = '';
+        while (numero < ax_ipt_sup) {
+            numero++;
+            span_msg.innerHTML += `<br>${numero}`;
+        };
+    }
+</script>

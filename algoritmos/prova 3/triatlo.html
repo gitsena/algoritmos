@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triatlo</title>
+</head>
+
+<body>
+    <div id="inputs">
+        <input id="nome" type="text" placeholder="Nome">        
+        <input id="idade" type="text" placeholder="Idade"><br>
+    </div>
+    <select id="slc_mod">
+        <option value="0">Selecione uma Modalidade</option>
+        <option value="1">Correr</option>
+        <option value="2">Nadar</option>
+        <option value="3">Pedalar</option>
+    </select>
+    <br>
+    <button onclick="praticar()">Praticar Esporte</button><br><br>
+    <div id="resultados" style="display: none;"></div>
+    <div id="imagens" style="display: none;">
+        <img id="corrida" src="https://image.flaticon.com/icons/png/128/103/103956.png" style="width: 0px;">
+        <img id="natacao" src="https://image.flaticon.com/icons/png/128/124/124212.png" style="width: 0px;">
+        <img id="pedalo" src="https://image0.flaticon.com/icons/png/128/94/94203.png" style="width: 0px;">
+    </div>
+
+</body>
+
+</html>
+<script>
+    var soma = 0;
+    var pped = 0;
+    var pnad = 0;
+    var pcor = 0;
+    var cor = 0;
+    var nad = 0;
+    var ped = 0;
+    var n = '';
+    var i = 0;
+    var m = 0;
+    var s = 0;
+    var sped = 0;
+    var scor = 0;
+    var snad = 0;
+
+
+    function praticar() {
+        s = 0;
+        n = String(nome.value);
+        i = Number(idade.value);
+        m = Number(slc_mod.value);
+        s = Number(Math.random() * 2);
+
+
+
+        if (m == 1 || m == 2 || m == 3) {
+
+            if ((i >= 18 && i <= 80) && (n.length) >= 3) {
+                imagens.style.display = 'block';
+                resultados.style.display = 'block';
+                inputs.style.display = 'none';
+                if (m == 1) {
+                    if (scor >= 10) {
+                        alert('Você chegou/excedeu o limite de distância para essa modalidade!');
+                    } else {
+                        cor = Number(s.toFixed(1));
+                        scor = scor + cor;
+                        soma = soma + cor;
+                        porcentagens();
+                        imagens_porcentagem();
+                        results();
+                    }
+                } else {
+                    if (m == 2) {
+                        if (snad >= 10) {
+                            alert('Você chegou/excedeu o limite de distância para essa modalidade!');
+                        } else {
+                            nad = Number(s.toFixed(1));
+                            snad = snad + nad;
+                            soma = soma + nad;
+                            porcentagens();
+                            imagens_porcentagem();
+                            results();
+                        }
+                    } else {
+                        if (m == 3) {
+                            if (sped >= 10) {
+                                alert('Você chegou/excedeu o limite de distância para essa modalidade!');
+                            } else {
+                                ped = Number(s.toFixed(1));
+                                sped = sped + ped;
+                                soma = soma + ped;
+                                porcentagens();
+                                imagens_porcentagem();
+                                results();
+
+                            }
+                        } else {
+                            alert('Ops! Erro interno.');
+                        }
+                    }
+                }
+
+            } else {
+                alert('Infelizmente você não está apto');
+            }
+        } else {
+            alert('Selecione uma modalidade!');
+        }
+    }
+
+
+    if (scor >= 10 && snad >= 10 && sped >= 10) {
+        alert('Parabéns triatlo concluído!!!');
+        zerar();
+    }
+
+    function results() {
+        resultados.innerHTML = (`Atleta: <b>${n}</b> - Idade: <b>${i}</b> anos<br><br>
+                            Km correndo: <b>${scor.toFixed(1)}</b> (<b>${pcor.toFixed(2)}</b>%)<br>
+                            Km Nadando: <b>${snad.toFixed(1)}</b> (<b>${pnad.toFixed(2)}</b>%)<br>
+                            Km Pedalando: <b>${sped.toFixed(1)}</b> (<b>${pped.toFixed(2)}</b>%)<br><br>
+                            Km total: <b>${soma.toFixed(1)}<br><br>`);
+        zerar();
+    }
+
+    function porcentagens() {
+        pped = (sped * 100) / soma;
+        pcor = (scor * 100) / soma;
+        pnad = (snad * 100) / soma;
+    }
+
+    function zerar() {
+
+        if (scor >= 10 && snad >= 10 && sped >= 10) {
+            soma = 0;
+            pped = 0;
+            pnad = 0;
+            pcor = 0;
+            cor = 0;
+            nad = 0;
+            ped = 0;
+            n = '';
+            i = 0;
+            m = 0;
+            s = 0;
+            sped = 0;
+            scor = 0;
+            snad = 0;
+            alert('Parabéns triatlo concluído!!!');
+            imagens.style.display = 'none';
+            resultados.style.display = 'none';
+            inputs.style.display = 'block';
+            
+        }
+    }
+
+
+    function imagens_porcentagem() {
+        corrida.style.width = (`${(pcor.toFixed()) * 2.5}px`);
+        natacao.style.width = (`${(pnad.toFixed()) * 2.5}px`);
+        pedalo.style.width = (`${(pped.toFixed()) * 2.5}px`);
+    }
+
+    
+    
+</script>

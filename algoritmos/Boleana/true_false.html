@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  Entra com a  Media <input id= 'ipt_media' type="text"><br><br>
+  Entra com a Frequencia <input id= 'ipt_frequencia' type="text"><br><br>
+  <button onclick ='analisar()'>Analisar</button>
+
+</body>
+</html>
+
+<!-- if(ax_aprovado){
+    alert ('Aluno aprovado')
+}
+else {
+    alert ('Aluno reprovado')
+}
+if(ax_mediaRuim || ax_freqRuim){
+    alert ('Reprovado')
+}
+else {
+    alwrt ('Aprovado')
+}  -->
+<script>
+    var ax_mediaOK = ipt_media >= 6
+    var ax_freqOK = ipt_frequencia.value >= 75
+    var ax_freqRuim = ipt_frequencia.value <75
+    var ax_aprovado = ax_mediaOK && ax_freqOK
+    var ax_seila = false
+    function analisar(){
+
+if(ax_seila){alert ('está com false')
+}else alert ('Esta com true')
+    }
+</script>

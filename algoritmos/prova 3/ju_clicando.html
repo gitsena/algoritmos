@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>juliana clicando</title>
+</head>
+
+
+<body>
+    <!-- Juliana Morosa gosta muito de números chamados "cabalísticos". Principalmente do 3, 4, 7 e 10. Ela quer saber quando chega em um determinado número de cliques que seja um deles. Assim, crie um programa em HTML/JS o qual:
+a) Tenha um texto "Você já clicou 0 vezes" no topo
+b) Ao clicar num botão "Clique cabalístico", o contador do texto em a) aumenta em 1 (ou seja, de 0 vai pra 1, de 1 vai pra 2, de 2 vai pra 3 e assim por diante)
+c) Caso o contador seja um dos quatro números que Juliana gosta, exiba um alert com a frase "Você clicou X vezes e Juliana gosta desse número!", onde X é a quantidade atual de cliques no botão
+  -->
+    <h3>Clica no botão abaixo</h3>
+    Você já clicou <span id='zero'></span> vezes <br>
+    <button onclick="clicar()">clicque cabalistico</button><br><br>
+
+</body>
+
+</html>
+
+<script>
+    var ax_var = 0
+    function clicar() {
+        ax_var += 1
+        zero.innerHTML = ax_var
+        if (ax_var == 3 || ax_var == 4 || ax_var == 7 || ax_var == 10) {
+            alert('Você clicou ' + ax_var + ' vezes e Juliana gosta desse número!')
+            // alert( `Você clicou ${ax_var} vezes e Juliana gosta desse número!`);
+        }
+    }
+</script>
+</body>
+</html>

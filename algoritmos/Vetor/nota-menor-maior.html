@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    insira notas dos alunos<input id="nota" type="text"><br>
+    <button onclick="mostrar()">mostrar</button><br><br>
+    <div id="div_mostrar"></div>
+
+</body>
+
+</html>
+<script>
+    var vt_nota = [];
+    var ax_nota = Number(nota.value);
+    function mostrar() {
+        vt_nota.push(ax_nota);
+        var ax_maior = - 99
+        var ax_menor = 99
+        div_mostrar.innerHTML = "";
+        for (var index = 0; index < vt_qq.length; index++) {
+            if (vt.qq[index] % 2 == 0) {
+            }
+            else if (vt_qq[index] < ax_menor) {
+                ax_menor = vt_qq[index];
+            }
+            else if (vt_qq[index] > ax_maior) {
+                ax_maior = vt_qq[index];
+            }
+
+        }
+        div_mostrar.innerHTML += `a maior nota é ${ax_maior} e a menor nota é ${ax_menor}<br>`;
+    }
+</script>

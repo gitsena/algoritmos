@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex2vetor</title>
+</head>
+
+<body>
+    <!-- tenha um campo "Destino de viagem" e um botão "Adicionar"
+b) Ao clicar no botão, esse destino deve ser adicionado em algum lugar o qual o usuário não vê. Não existe problema em serem registrados valores repetidos
+c) Deve haver os botões:
+  "Primeira viagem" - Ao clicar nele, aparece abaixo o primeiro local cadastrado ou "ainda não viajou", caso nenhuma viagem tenha sido registrada
+  "Terceira viagem" - Ao clicar nele, aparece abaixo o 3º local cadastrado ou "ainda fez a 3ª viagem", caso não tenha feito 3 viagens ainda
+  "Última viagem" - Ao clicar nele, aparece abaixo o último local cadastrado ou "ainda não viajou", caso nenhuma viagem tenha sido registrada
+OBS: Obtenha esses três valores SOMENTE do vetor que criar
+  -->
+    Qual seu destino?<input id="ipt_viagem" type="text"><br>
+    <button onclick="adicionar()">Adicionar</button><br><br>
+    <button onclick="viagem1()">1 Viagem</button>
+    <button onclick="viagem3()">3 Viagem</button>
+    <button onclick="ult_viagem()">Ultima Viagem</button><br>
+    <div id="div_mostrar"></div>
+
+</body>
+
+</html>
+<script>
+    var vt_viagem = [];
+    function adicionar() {
+        vt_viagem.push(ipt_viagem.value);
+        ipt_viagem.value = '';
+
+    }
+        function viagem1() {
+            if (vt_viagem.length > 0) {
+                div_mostrar.innerHTML += `sua primeira viagem ${vt_viagem[0]}<br>`;
+            } else {
+                alert("ainda não viajou")
+            }
+
+        }
+        function viagem3() {
+            if (vt_viagem > 1) {
+                div_mostrar.innerHTML += `${vt_viagem[2]} <br>`;
+            } else {
+                alert(`ainda não viajou`)
+            }
+        }
+        function ult_viagem() {
+                div_mostrar.innerHTML += `${vt_viagem[vt_viagem.length - 1]}<br>`;
+           
+            }
+        
+    
+</script>

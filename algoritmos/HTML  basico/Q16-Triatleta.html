@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triatleta</title>
+</head>
+
+<body>
+    <h1>O Que Faz Um Triatleta?</h1>
+    <button onclick="nadar()">Nadar</button>
+    <button onclick="correr()">Correr</button>
+    <button onclick="pedalar()">Pedalar</button>
+    <button onclick="curiosidade()">Curiosidade</button>
+    <br><br>
+    <div id="div_triatleta"></div>
+
+</body>
+
+</html>
+
+<script>
+    function nadar() {
+        div_triatleta.innerHTML = '<img src="nadar.jpg" height="150px" >'
+    }
+    function correr() {
+        div_triatleta.innerHTML = '<img src="correr.jpg" height="150px" >'
+    }
+    function pedalar() {
+        div_triatleta.innerHTML = '<img src="pedalar.jpg" height="150px" >'
+    }
+    function curiosidade() {
+        div_triatleta.innerHTML = "O Triatlo é um dos esportes mais completos, especialmente por abranger"
+         +='três práticas diferentes: Natação, Ciclismo e Corrida (sempre nessa ordem)'
+
+    }
+</script>

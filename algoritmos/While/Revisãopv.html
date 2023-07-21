@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDA-camisetas</title>
+</head>
+
+<body>
+    <div id=div_c>
+        <h2>SDA - AS MELHORES CAMISETAS DO BRASIL</h2>
+        Quantas Camiseta deseja: <input id="qtd_camiseta" type="text" placeholder="minimo 100 e maximo 2000">
+        <br><br>
+        <select id="tamanho">
+            <option value=" ">Selecione o Tamanho</option>
+            <option value="Tam P">Pequeno</option>
+            <option value="Tam G">Grande</option>
+        </select>
+        <select id="tipo">
+            <option value=" ">Selecione o modelo</option>
+            <option value="Camiseta Branca">Camisetas Brancas</option>
+            <option value="Camiseta Colorida">Camisetas Coloridas</option>
+        </select>
+        <br><br>
+        Qual a distancia para entrega:<input id="distancia" type="text" placeholder="ex.10km">
+        <br><br>
+    </div>
+    <div id="div_a">
+        <button onclick="orcar()">Orçar</button>
+    </div>
+    <div id="div_mostrar"></div>
+    <div id="div_b" style="display: none;">
+        <button onclick="novo()">Novo Orçamento</button><br><br>
+        <div id="div_novo"></div>
+        <button onclick="comprar()">Comprar</button><br><br>
+        <div id="div_comprar"></div>
+    </div>
+    <div id= "div_d" style="display: none;">
+    <h2>SDA - AS MELHORES CAMISETAS DO BRASIL</h2>
+</div>
+</body>
+
+</html>
+<!-- 
+E.  Abaixo de tudo tenha dois botões:
+ a.       Botão “Novo Orçamento” que quando clicado limpa as variáveis e mensagens e volta para a parte-1 (como se estivesse reiniciado o programa)
+  b.       Botão “Comprar” – que quando clicado vai para a tela de Comprar (parte-3)
+Parte 3
+Faça o sorteio de um número aleatório (Random) entre 2,5 e 4,5. Esse número será o percentual em que o cliente receberá de bônus na próxima compra. O bônus é calculado com base no “valor total das mercadorias”
+Calcule o valor do bônus e emita um alert com a mensagem “PARABÉNS!!! Você recebeu um bônus de 9,9%, na sua próxima compra você terá um bônus de R$ 999,99”
+Limpe as variáveis e mensagens e volte para a parte-1 (como se estivesse reiniciado o programa).-->
+<script>
+    var valor_total = 0
+    
+    function orcar() {
+        var ax_pc_unitario = Number(qtd_camiseta.value);
+        var ax_distancia = Number(distancia.value);
+        var ax_tamanho = tamanho.value;
+        var ax_tipo = tipo.value;
+
+
+        if (ax_pc_unitario < 100) {
+            div_mostrar.innerHTML = "Informe outra quantidade, Vendemos somente no atacado"
+        }
+        else if (ax_pc_unitario > 2000) {
+            div_mostrar.innerHTML = "Consulte nosso PCP (planejamento e controle da produção)"
+        }
+        else if (ax_distancia == 0 || ax_distancia == ' ') {
+            div_mostrar.innerHTML = "Informe a distância de entrega"
+        }
+        else if (ax_tamanho == " " || ax_tipo == " ") {
+            div_mostrar.innerHTML = "Selecione um Produto e Tamanho"
+        }
+        else {
+            div_a.style.display = 'none'
+            parte2()
+        }
+        function parte2() {
+            if (ax_tamanho == 'Tam P' && ax_tipo == 'Camiseta Branca') {
+                valor_total = ax_pc_unitario * 15
+
+                div_mostrar.innerHTML = `<span style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bolder;">Orçamento de vendas</span><br>
+                 Quantidade Solicitada: ${ax_pc_unitario} <br>
+                 Tamanho Selecionado: ${ax_tamanho} <br>
+                 Produto Selecionado: ${ax_tipo} <br><br>
+                 O valor total das mercadorias é de R$ ${valor_total}<br>`
+                div_b.style.display = 'block'
+            }
+            else if (ax_tamanho == 'Tam P' && ax_tipo == 'Camiseta Colorida') {
+                valor_total = ax_pc_unitario * 16
+
+                div_mostrar.innerHTML = ` <span style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bolder;">Orçamento de vendas</span><br>
+                 Quantidade Solicitada: ${ax_pc_unitario} <br>
+                 Tamanho Selecionado: ${ax_tamanho} <br>
+                 Produto Selecionado: ${ax_tipo} <br><br>
+                 O valor total das mercadorias é de R$ ${valor_total}<br>`
+                div_b.style.display = 'block'
+            }
+            else if (ax_tamanho == 'Tam G' && ax_tipo == 'Camiseta Branca') {
+                valor_total = ax_pc_unitario * 17
+
+                div_mostrar.innerHTML = `<span style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bolder;">Orçamento de vendas</span><br>
+                 Quantidade Solicitada: ${ax_pc_unitario} <br>
+                 Tamanho Selecionado: ${ax_tamanho} <br>
+                 Produto Selecionado: ${ax_tipo} <br><br>
+                 O valor total das mercadorias é de R$ ${valor_total}<br>`
+                div_b.style.display = 'block'
+            }
+            else if (ax_tamanho == 'Tam G' && ax_tipo == 'Camiseta Colorida') {
+                valor_total = ax_pc_unitario * 18
+
+                div_mostrar.innerHTML = `<span style="font-family: Arial, Helvetica, sans-serif; font-size: medium; font-weight: bolder;">Orçamento de vendas</span><br>
+                 Quantidade Solicitada: ${ax_pc_unitario} <br>
+                 Tamanho Selecionado: ${ax_tamanho} <br>
+                 Produto Selecionado: ${ax_tipo} <br><br>
+                 O valor total das mercadorias é de R$ ${valor_total}<br>`
+                div_b.style.display = 'block'
+            }
+            if (ax_distancia > 67) {
+                valor_total = ax_pc_unitario * 0.07
+                div_mostrar.innerHTML += `Para essa distância será cobrado um adicional de R$ ${valor_total.toFixed(2)} para entrega`
+                div_b.style.display = 'block'
+            }
+
+        }
+    }
+    function novo() {
+        qtd_camiseta.value = ' ';
+        tamanho.value = ' ';
+        distancia.value = ' ';
+        tipo.value = ' ';
+        div_mostrar = ' ';
+    }
+    var bonus = 0;
+    function comprar() {
+        var sortear = Number(Math.random()) * 4.5
+        if(ax_tamanho == 'Tam P' && ax_tipo == 'Camiseta Branca'){
+            valor_total = ax_pc_unitario * 15
+            bonus = valor_total - sortear
+          alert (`PARABÉNS!!! Você recebeu um bônus de ${sortear}%, na sua próxima compra você terá um bônus de R$ ${bonus}`)
+        }
+        div_c.style.display = 'none'
+        div_d.style.display = 'block'
+    }
+</script>

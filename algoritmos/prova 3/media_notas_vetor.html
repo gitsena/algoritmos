@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex17</title>
+</head>
+
+<body>
+    insira notas dos alunos<input id="ipt_nota" type="text"><br>
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="mostrar()">mostrar</button><br><br>
+    <div id="div_mostrar"></div>
+
+
+</body>
+
+</html>
+<script>
+    var vt_nota = [];
+    function registrar() {
+        var ax_nota = Number(ipt_nota.value);
+        vt_nota.push(ax_nota);
+        ipt_nota.value = '';
+
+    }
+    function mostrar() {
+        var ax_qtd = 0;
+        var ax_acm = 0;
+        
+        for (var index = 0; index < vt_nota.length - 1; index++) {
+            if (vt_nota[index] >= 6 && vt_nota[index] <= 8) {
+                ax_qtd ++;
+                ax_acm = ax_acm + vt_nota[index];
+            }
+
+        }
+        div_mostrar.innerHTML += `as notas registradas ${vt_nota}<br> e a média das notas entre 6 e 8 é ${ax_acm / ax_qtd.toFixed(2)}<br> `;
+    }
+</script>

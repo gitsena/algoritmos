@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q22-Itinerário</title>
+</head>
+
+<body>
+    <span id="zonas" style="display: block;">
+        <h3>Entregas para ZS</h3>
+        <input id="sul" type="text">
+        <h3>Entregas para ZN</h3>
+        <input id="norte" type="text">
+        <h3>Entregas para ZL</h3>
+        <input id="leste" type="text">
+        <h3>Entregas para ZO</h3>
+        <input id="oeste" type="text"><br><br>
+        <button onclick="agenda()">Carregar Agenda</button>
+    </span>
+    <div id="entregas"></div>
+</body>
+
+</html>
+<script>
+    var total = 0
+
+    function agenda() {
+    total = Number(sul.value) + Number(norte.value) + Number(leste.value) + Number(oeste.value)
+    zonas.style.display = 'none'
+    entregas.innerHTML = `<span id="primeira_entrega">Entregas ZL: ${leste.value}<br></span>
+                          <span id="segunda_entrega">Entregas ZS: ${sul.value}<br></span>
+                          <span id="terceira_entrega">Entregas ZN: ${norte.value}<br></span>
+                          <span id="quarta_entrega">Entregas ZO: ${oeste.value}<br></span>
+                          <span id="resultado">Entregas restantes: ${total}</span><br><br>
+                          <button onclick="entrega_zl()">Entregar ZL</button> <button onclick="entrega_zs()">Entregar ZS</button> 
+                          <button onclick="entrega_zn()">Entregar ZN</button> <button onclick="entrega_zo()">Entregar ZO</button>`
+    }
+    function entrega_zl() {
+    leste.value -= 1
+    total -= 1
+    primeira_entrega.innerHTML = `Entregas ZL: ${zonaleste.value}<br>`
+    resultado.innerHTML = `Entregas restantes: ${total}`
+    }
+
+    function entrega_zs() {
+    sul.value -= 1
+    total -= 1
+    segunda_entrega.innerHTML = `Entregas ZS: ${zonasul.value}<br>`
+    resultado.innerHTML = `Entregas restantes: ${total}`
+    }
+
+    function entrega_zn() {
+    norte.value -= 1
+    total -= 1
+    terceira_entrega.innerHTML = `Entregas ZN: ${zonanorte.value}<br>`
+    resultado.innerHTML = `Entregas restantes: ${total}`
+    }
+
+    function entrega_zo() {
+    oeste.value -= 1
+    total -= 1
+    quarta_entrega.innerHTML = `Entregas ZO: ${zonaoeste.value}<br>`
+    resultado.innerHTML = `Entregas restantes: ${total}`
+    }
+</script>

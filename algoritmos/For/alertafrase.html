@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Pergunte ao usuário um número
+b) Pergunte ao usuário uma frase
+c) Ao clicar num botão "Papagaio",
+ a frase é exibida N vezes em N alerts, onde N é o número informado em a) -->
+    insira um numero<input id="numero" type="text"><br><br>
+    insira um frase<input id="frase" type="text"><br><br>
+    <button onclick="papagaio()">Papagaio</button><br>
+    <div id="div_mostrar"></div>
+</body>
+</html>
+<script>
+    function papagaio(){
+for(contador = 1; contador <= Number(numero.value); contador ++)
+alert (`${contador} ${frase.value}`)
+    }
+</script>

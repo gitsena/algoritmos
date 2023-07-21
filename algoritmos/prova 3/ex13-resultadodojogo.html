@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EX13- Resultado do Jogo</title>
+</head>
+
+<body>
+    <h1>Resultado do Jogo</h1>
+    Indique o Resultado:<select id="result">
+        <option selected disabled value="">Selecione</option>
+        <option value="Ganhou">Vitória</option>
+        <option value="Empatou">Empate</option>
+        <option value="Perdeu">Derrota</option>
+    </select>
+    <br><br><br><br>
+    <button onclick="registrar()">Registrar Jogo</button><br>
+    <div id="mostrar"></div>
+    <br><br>
+    <input id="ipt_jogo" onkeyup="partida()" placeholder="Insira a partida do jogo" type="text"><br>
+    <div id="mostrar_jogo"></div>
+</body>
+
+</html>
+<script>
+    var vitoria = [];
+    var empate = [];
+    var derrota = [];
+    var tudo = [];
+    function registrar() {
+        var ax_result = result.value;
+        if (ax_result == "") {
+            alert("ERROR! Você deve Inddicar um resultado")
+        }
+        else {
+            if (ax_result == "Ganhou") {
+                vitoria.push(ax_result);
+            } else if (ax_result == "Empatou") {
+                empate.push(ax_result);
+            } else if (ax_result == "Perdeu") {
+                derrota.push(ax_result);
+            }
+            tudo.push(ax_result);
+            var soma = Number(vitoria.length) + Number(empate.length) + Number(derrota.length);
+            var total = Number(3 * vitoria.length) + Number(empate.length);
+            document.getElementById('mostrar').innerHTML = `O time teve ${vitoria.length} vitórias, ${empate.length} empates e ${derrota.length} derrotas.
+            <br>Pontuação total: ${total}<br>
+            Aproveitamento : ${(total / (soma * 3) * 100).toFixed(2)}%`
+        }
+        result.value = '';
+    }
+    function partida() {
+        var jogo = Number(ipt_jogo.value);
+        if (jogo <= 0) {
+            document.getElementById('mostrar_jogo').innerHTML = '<b style="color: red;">Error! insira um numero válido</b>'
+        }
+        else if (tudo[jogo - 1] == "Ganhou") {
+            document.getElementById('mostrar_jogo').innerHTML = `<b>No ${jogo}º jogo, o time ${tudo[jogo - 1]}</b>`
+        }
+        else if (tudo[jogo - 1] == "Empatou") {
+            document.getElementById('mostrar_jogo').innerHTML = `<b>No ${jogo}º jogo, o time ${tudo[jogo - 1]}</b>`
+        }
+        else if (tudo[jogo - 1] == "Perdeu") {
+            document.getElementById('mostrar_jogo').innerHTML = `<b>No ${jogo}º jogo, o time ${tudo[jogo - 1]}</b>`
+        } 
+        else{
+            document.getElementById('mostrar_jogo').innerHTML = `<b style="color: red;">Não foi cadastrado um ${jogo}º jogo</b>`
+        }
+    }
+
+</script>

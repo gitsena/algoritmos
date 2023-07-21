@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras</title>
+</head>
+<body>
+    <!-- Tenha três campos de entrada (nome do produto, quantidade e valor unitário) e uma imagem de carrinho de compras clicável.
+ Ao clicar no carrinho os elementos deveM sumir e surgir o seguinte:
+ Texto na página: “O orçamento da quantidade XXX do produto YYYYYYYY é de R$ 999999,99”, 
+ esta mensagem não pode apagar as mensagens anteriores (se existirem).
+ Botão “Comprar MAIS” que esconde os elementos do item b) e exibe novamente os elementos do item a).
+ Botão “Finalizar” que emite o alerta abaixo, limpa todas as áreas e variáveis (como se estivesse iniciando novamente o programa.
+ o Alerta: “A quantidade de itens orçados foi de 999 e a soma desses orçamentos foi de R$ 99999999,99” -->
+    <h2>Compras</h2>
+        <input id=nome_produto type="text" placeholder="Nome do produto"><br></br>
+        <input id=quantidade type="text" placeholder="Quantidade"><br></br>
+        <input id=valor_unitario type="text" placeholder="Valor unitário"><br></br>
+        <button onclick="comprar()">COMPRAR</button>
+<div id="div_compras"></div>
+</body>
+</html>
+
+<script>
+    var ax_valor = 0
+    
+    function comprar() {
+     ax_valor = quantidade.value * valor_unitario.value
+     div_compras.innerHTML = ('O valor de ' + quantidade.value + ' ' + nome_produto.value + ' é de R$ ' + `${ax_valor}` );
+    }
+</script>

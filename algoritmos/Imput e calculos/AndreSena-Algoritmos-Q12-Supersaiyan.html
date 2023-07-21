@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAGONBALL</title>
+</head>
+
+<body>
+
+    <h1><u>Guerreiros Sayajin</u></h1>
+    <input id="poder" type="text" placeholder="insira o poder base">
+
+    <br><br><b>Transformar em...</b></br></br>
+    <button onclick="ssj1()">SSJ1</button>
+    <button onclick="ssj2()">SSJ2</button>
+    <button onclick="ssj3()">SSJ3</button><br></br>
+    <div id="transformar"><br></div>
+
+
+</body>
+
+</html>
+
+<script>
+    function ssj1() {
+        transformar.innerHTML = `Após se transfromar no Super Sayajin 1, o ki desse Sayajin passa a ser de ${poder.value * 50} <br> 
+        <img style="width: 250px;" src="https://e7.pngegg.com/pngimages/937/807/png-clipart-dragon-ball-z-super-saiyan-guko-goku-dragon-ball-z-dokkan-battle-vegeta-gohan-super-saiya-dragon-ball-fictional-characters-superhero.png" alt="SSJ1"> <br><br>`
+    }
+
+    function ssj2() {
+        transformar.innerHTML = `Após se transfromar no Super Sayajin 2, o ki desse Sayajin passa a ser de ${poder.value * 100} <br> 
+        <img style="width: 300px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT14Fa4yoxopn97y8Hbv13isbiGoTCJdXWlrnrBafLNyni4bryr4U_yVHCsFz_NDfak6NU&usqp=CAU" alt="SSJ2"> <br><br>`
+    }
+
+    function ssj3() {
+        transformar.innerHTML = `Após se transfromar no Super Sayajin 3, o ki desse Sayajin passa a ser de ${poder.value * 200} <br> 
+        <img style="width: 500px;" src="https://static.wikia.nocookie.net/dragonball/images/7/71/GokuSuperSaiyanIIINV.png/revision/latest?cb=20150102174235&path-prefix=pt-br" alt="SSJ3"> <br><br>`
+    }
+
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triatlo</title>
+</head>
+
+<body>
+    <!--  Solicite o nome e a idade do atletla em inputs. Solicite ainda que o usuário informe qual modalidade vai praticar,
+         dentre "Correr", "Nadar" e "Pedalar". Essa informação deve ser informada numa combo (tag "select")
+b)  Ao clicar num botão "Praticar esporte", verifique se seu nome possui pelo menos 3 letras e se sua idade é entre 18 e 80. 
+Caso uma dessas condições não for atendida, exiba um alert com mensagem explicativa e não faça mais nada. Porém, 
+caso tudo esteja válido, prossiga nos itens a seguir
+c) Ainda após clicar no botão "Praticar esporte", sorteie a distância entre 0 e 2km que o atleta irá percorrer (com uma casa decimal).
+O atleta irá correr, nadar ou pedalar, a distância sorteada dependendo do item selecionado na combo.
+Atualize um "placar" de ações na tela (some a distância sorteada na modalidade escolhida no select combo), como neste exemplo:
+  -->
+    <h2>Triatletismo</h2>
+            <input id="nome" type="text" placeholder="Nome completo">
+            <br><br>
+            <input id="idade" type="text" placeholder="Digite sua idade">
+            <br><br>
+            <select id='modalidade'>
+                <option selected disabled value="">Selecione a modalidade desejada</option>
+                <option value="correr">Correr</option>
+                <option value="nadar">Nadar</option>
+                <option value="pedalar">Pedalar</option>
+            </select>
+            <button onclick="praticar()">Praticar esporte</button>
+            <br>
+            <div id="div_mostrar"></div>
+</body>
+
+</html>
+<script>
+    var ax_nome = 0
+    function praticar() {
+        var ax_nome = nome.value;
+        var ax_idade = idade.value;
+        var ax_percorrer = Number(Math.random()) * 10
+        div_mostrar.innerHTML = ' ';
+        if (ax_idade < 18 || ax_idade > 80) {
+            alert('Não será possivel continuar, Não tem idade recomendada');
+        }
+        else if (ax_percorrer == 0 || ax_percorrer <= 2) {
+            div_mostrar.innerHTML = `O número Sorteado é  ${(ax_percorrer).toFixed(1)} Km <br> `;
+
+        }
+
+    }
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudar</title>
+</head>
+<body>
+    <select id="sel_estudar" onchange="mostrar()"> 
+        <option value=" ">Selecione a materia...</option>
+        <option value="HTML">TI</option>
+        <option value="HTML">Algoritmo</option>
+        <option value="HTML"> Banco de Dados</option>
+        <option value="HTML"> Arq.Comp</option>
+    </select>
+    <button onclick= "mostrar()"> Mostrar</button>
+</body>
+</html>
+
+<script>
+    function mostrar() {
+        alert("Voce tem que estudar:" + sel_estudar.value);
+    }
+</script>

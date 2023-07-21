@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Solicite o login e senha do usuário
+b) Ao clicar num botão "Entrar", verifique as credenciais de acesso, sendo que...
+c) Apenas o login "aidimin" com a senha "seinha" dão acesso ao sistema. Nesse caso, exiba uma frase em azul abaixo do botão dizendo "Usuário autenticado com sucesso!"
+d) Caso o login e/ou a senha sejam inválidos, exiba uma dessas frases na cor vermelha abaixo do botão:
+    "Seu login está inválido!", caso o login seja inválido.
+    "Sua senha está inválida!", caso a senha seja inválida.
+    Ambas as frases anteriores, uma ao lado ou abaixo da outra, caso tanto o login quanto a senha estejam erradas
+e) Se somente a senha estiver errada, exiba um alert com a frase "Entre em contato com o suporte para recuperar sua senha"
+  -->
+
+    Login:<input id='login' type="text"><br><br>
+    Sennha:<input id='senha' type="text"><br><br>
+    <button onclick="entrar()">Entrar</button><br>
+    <div id="div_mostrar"></div>
+
+</body>
+
+</html>
+<script>
+
+    function entrar() {
+        var axLogin = login.value == 'aidimin'
+        var axSenha = senha.value == "seinha"
+        var axCondicao = login.value != 'aidimin' && senha.value != 'seinha' 
+        var axVazio = login.value == ' ' && senha.value == ' ' 
+
+        if (axLogin && axSenha) {
+            div_mostrar.innerHTML = `<span style="color: blue;">Usuário autenticado com sucesso!</span>`
+        }
+        else if (axCondicao || axVazio) {
+            div_mostrar.innerHTML = `<span style="color: red;">Senha e login não inseridos ou incorretos! </span>`
+        }
+        else if (axLogin == false ) {
+            div_mostrar.innerHTML = `<span style="color: red;">Seu login está inválido!</span>`
+        }
+        else if ( axSenha == false ){
+            div_mostrar.innerHTML = `<span style="color: red;">Sua senha está inválida!</span>`
+    }
+    }
+</script>

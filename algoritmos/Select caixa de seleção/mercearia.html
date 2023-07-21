@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+<!-- 1. Crie um programa em HTML/JS o qual:
+
+a) Tenha uma "combo" com nomes de 4 produtos de mercearia (ex: leite, farinha etc)
+
+b) Ao clicar num botão "ver preço" deve aparecer um alert com a frase "Isso custa R$X,XX" (você decide o valor de cada produto com 2 casas decimais). -->
+
+</head>
+<body>
+    <h2 style="color: rgb(90, 4, 4);">mercearia Sena</h2>
+<select id="mercearia" onchange="mostrar()">
+    <option selected disabled value="">Selecione o produto... </option>
+    <option value="R$5,00">Leite</option>
+    <option value="R$7,00">Farinha</option>
+    <option value="R$10,00">Arroz</option>
+    <option value="R$6,00">Feijão</option>
+</select><br><br>
+<button onclick="preco()">Ver Preço</button>
+<div id="div_mostra"></div>
+
+</body>
+</html>
+
+<script>
+function preco(){
+ alert  (`Isso custa ${mercearia.value}`);
+
+}
+</script>
+
+
+
+
+

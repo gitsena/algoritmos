@@ -1,0 +1,44 @@
+
+    <!DOCTYPE html>
+    <html lang="pt">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Q12-CLICANDO</title>
+    </head>
+   
+
+    <body>
+
+        <h3>Clica no botão abaixo</h3>
+        Você já clicou 0 vezes <br>
+        <button onclick="clicar()">click</button><br><br>
+        <div id="div_click"></div>
+    </body>
+
+    </html>
+
+    <script>
+        var ax_var = 0
+        function clicar() {
+            ax_var += 1
+            if (ax_var > 15) {
+                div_click.innerHTML = 'Eita dedo nervoso!'
+            }
+            else if (ax_var >= 11) {
+                div_click.innerHTML = 'Gosta de clicar, hein!'
+            }
+            else if (ax_var >= 5) {
+                div_click.innerHTML = 'Dedo bom, mano enquanto'
+            }
+            else {
+                div_click.innerHTML = 'Dedo fraquinho, hein'
+            }
+        }
+    </script>
+
+</body>
+
+</html>

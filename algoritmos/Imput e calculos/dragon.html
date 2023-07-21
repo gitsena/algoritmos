@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+
+    <h1>Medidor de ki</h1>
+    Insira o ki: <input id="valorki" type="text">
+
+<br><br>Transformar em...<br><br>
+<button onclick="ssj1()">SSJ1</button>
+    <button onclick="ssj2()">SSJ2</button>
+    <button onclick="ssj3()">SSJ3</button><br><br>
+    <div id="dragonball"><br></div>
+   
+    
+</body>
+</html>
+
+<script>
+    function ssj1(){
+        dragonball.innerHTML = `Após se transfromar no Super Sayajin 1, o ki desse Sayajin passa a ser de ${valorki.value*50} <br> 
+        <img style="width: 250px;" src="https://i0.wp.com/i.pinimg.com/originals/b2/98/c2/b298c2f10c38bc14be6e196c07f84c27.png" alt="SSJ1"> <br><br>`
+    }
+
+    function ssj2(){
+        dragonball.innerHTML = `Após se transfromar no Super Sayajin 2, o ki desse Sayajin passa a ser de ${valorki.value*100} <br> 
+        <img style="width: 300px;" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ab60cab7-0751-4261-a1f6-268e74c937e3/daemjz9-97a2e8fe-9a1a-422f-8207-f8c9c81016b2.png/v1/fill/w_1024,h_1434,strp/super_saiyan_2_goku_aura_by_brusselthesaiyan_daemjz9-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTQzNCIsInBhdGgiOiJcL2ZcL2FiNjBjYWI3LTA3NTEtNDI2MS1hMWY2LTI2OGU3NGM5MzdlM1wvZGFlbWp6OS05N2EyZThmZS05YTFhLTQyMmYtODIwNy1mOGM5YzgxMDE2YjIucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.304C5UER-MTZ15umdW7PbyFXaIkYfjoOYtlkNKe-hz0" alt="SSJ2"> <br><br>`
+    }
+
+    function ssj3(){
+        dragonball.innerHTML = `Após se transfromar no Super Sayajin 3, o ki desse Sayajin passa a ser de ${valorki.value*200} <br> 
+        <img style="width: 500px;" src="https://images2.alphacoders.com/931/931698.png" alt="SSJ3"> <br><br>`
+    }
+
+</script>

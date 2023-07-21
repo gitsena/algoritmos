@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    insira notas dos alunos<input id="ipt_nota" type="text"><br>
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="mostrar()">mostrar</button><br><br>
+    <div id="div_mostrar"></div>
+
+</body>
+
+</html>
+<script>
+    var vt_nota = [];
+    function registrar() {
+        var ax_nota = Number(ipt_nota.value);
+        vt_nota.push(ax_nota);
+        ipt_nota.value = '';
+
+    }
+
+    function mostrar() {
+        var ax_menor = 99
+        var ax_maior = - 99
+
+        if (vt_nota == '') {
+            alert("É necessario registrar alguma nota")
+        }
+        else {
+                    
+            for (var index = 0; index < vt_nota.length; index++) {
+                if (vt_nota[index] % 2 == 0) {
+                    if (vt_nota[index] < ax_menor) { ax_menor = vt_nota[index] }
+                    if (vt_nota[index] > ax_maior) { ax_maior = vt_nota[index] }
+                }
+            }
+            div_mostrar.innerHTML += `estas são as notas registradas ${vt_nota}<br>`;
+            div_mostrar.innerHTML += `a maior nota é ${ax_maior} e a menor nota é ${ax_menor}<br>`;
+        }
+    }
+</script>

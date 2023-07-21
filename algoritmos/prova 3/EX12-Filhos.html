@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex12-filhos</title>
+</head>
+
+<body>
+    Insira o nome dos filhos:<input id="ipt_filho" type="text" placeholder="ex Douglas Silva"></input><br><br>
+    <button onclick="cadastrar()">Cadastrar</button>
+    <button onclick="atualizar()">Atualizar Família</button><br><br>
+    <div id="mostrar"></div>
+</body>
+
+</html>
+<script>
+    var vt_filhos = [];
+    function cadastrar() {
+        var ax_filho = ipt_filho.value;
+        if (ax_filho == '') {
+            alert("Error! Inserira um nome para cadastrar")
+        }
+        else if (vt_filhos[vt_filhos.length - 1] == ax_filho) {
+            alert('Não é pode cadastrar mais de um filho com o mesmo nome!')
+        }
+        else {
+            vt_filhos.push(ax_filho);
+        }
+        ipt_filho.value = '';
+    }
+
+    function atualizar() {
+        if (ax_filho = '' || vt_filhos == "") {
+            alert("Error! Inserira um nome para cadastrar")
+        }
+        else{
+        mostrar.innerHTML = `Você tem ${vt_filhos.length} filhos <br>
+    Se colocar eles em escola particular, seu custo mensal será de aproximadamente <b>R$ ${(vt_filhos.length * 3000).toFixed(2)}</b><br>
+    Se eles estudarem em escola pública, seu custo mensal será de aproximadamente <b>R$ ${(vt_filhos.length * 1500).toFixed(2)}</b>`
+    }
+}
+</script>

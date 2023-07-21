@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filmevetor</title>
+</head>
+
+<body>
+    <button onclick="mostrar()">mostrar</button><br><br>
+    
+   
+    <div id="div_mostrar"></div>
+   
+</body>
+
+</html>
+<script>
+    var vt_mes= ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
+     var vt_dias= [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    
+    function mostrar() {
+        div_mostrar.innerHTML = "";
+            for (var index = 0; index < vt_mes.length; index++ ) {
+                div_mostrar.innerHTML += `o mes de ${vt_mes[index]} tem ${vt_dias[index]} dias ao todo <br>`;
+
+            }  
+        }
+            </script>

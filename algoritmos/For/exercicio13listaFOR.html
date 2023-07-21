@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    INFORME O NUMERO DE XICARAS DE CAFÉ: <input id="ipt_cafe" type="text"><br>
+    <button onclick="ver()">clique aqui</button><br>
+    <div id="div_show"></div>
+
+</body>
+</html>
+<script>
+
+function ver() {
+    for (var contador = 1; contador <= ipt_cafe.value ; contador++) {
+       
+    div_show.innerHTML += `<img src="https://www.acasaencantada.com.br/wp-content/uploads/2020/05/como-conservar-leite-em-po-03-530x794.jpg"><br>`;
+   div_show.innerHTML += `<img src="https://image.freepik.com/fotos-gratis/cafe-em-po-na-colher-de-madeira-em-branco_253984-1697.jpg"><br>`;
+    div_show.innerHTML += `<img src="https://image.freepik.com/fotos-gratis/cafe-em-po-na-colher-de-madeira-em-branco_253984-1697.jpg"><br>`;
+        
+    
+    }
+}
+
+</script>

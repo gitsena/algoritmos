@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frases</title>
+</head>
+
+<body>
+    <!-- A) Tenha uma caixa de seleção com as opções:
+
+        - Uma vez...
+
+        - Num belo dia...
+
+        - Numa noite chuvosa...
+
+    B) Tenha uma outra caixa de seleção com as opções:
+
+        - Um peixe morreu afogado
+
+        - Um gato tomou banho
+
+        - Um corvo se curvou  
+
+    C) Um botão que ao ser clicado, exibe um alerta, juntando os valores das duas seleções:
+
+            Por exemplo
+
+             - "Uma vez... Um peixe morreu afogado"
+
+             - "Num belo dia... Um corvo se curvou" -->
+             <h2>JUNTE AS FRASES</h2>
+    <select id="mostre_um" onchange="frase_um()">
+        <option selected disabled value="">Selecione a primeira frase...</option>
+        <option value="Uma vez">Uma vez</option>
+        <option value="Num belo dia">Num belo dia</option>
+        <option value="Numa noite chuvosa">Numa noite chuvosa</option>
+    </select><br><br>
+    <select id="mostre_dois" onchange="frase_dois()">
+        <option selected disabled value="">Selecione a segunda frase...</option>
+        <option value=" Um peixe morreu afogado">Um peixe morreu afogado</option>
+        <option value=" Um gato tomou banho">Um gato tomou banho</option>
+        <option value=" Um corvo se curvou">Um corvo se curvou</option>
+    </select><br><br>
+    <button onclick="clica()">CLICK</button>
+
+</body>
+
+</html>
+<script>
+    function clica() {
+        alert (`${mostre_um.value + mostre_dois.value}`);
+    }
+</script>

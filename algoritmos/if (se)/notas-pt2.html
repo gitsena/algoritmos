@@ -1,0 +1,50 @@
+<center>
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOTAS-PT2</title>
+</head>
+
+<body>
+    <h2 style="color: darkblue;">MINHAS NOTAS!</h2>
+    <input id='nome_aluno' type="text" placeholder="entre com seu nome">
+    <br><br>
+    <input id='primeira_nota' type="text" placeholder="entre com sua primeira nota">
+    <br><br>
+    <input id='segunda_nota' type="text" placeholder="entre com sua segunda nota">
+    <br><br>
+    <input id='terceira_nota' type="text" placeholder="entre com sua terceira nota">
+    <br><br>
+    <button onclick="mostrar()">M0STRAR NOTA</button>
+    <div id="div_nota"></div>
+    
+</body>
+</html>
+
+<script>
+    
+
+    function mostrar() {
+        var soma_total = Number(primeira_nota.value) + Number(segunda_nota.value) + Number(terceira_nota.value)
+        var media_nota = soma_total /3
+          
+        div_nota.innerHTML += ('O aluno  ' + nome_aluno.value + ' ficou com a media ' + `${media_nota.toFixed(2)}` + ' e a soma total de suas notas é ' + `${soma_total}`);
+    
+        if (media_nota >= 6) {
+            alert ('PARABENS!!!! VOCÊ FOI APROVADO!');
+        }
+        else {(media_nota <= 5) 
+            alert ('INFELIZMENTE VOCÊ FOI REPROVADO');
+        }
+    }
+
+    
+    
+
+
+</script>
+</center>!

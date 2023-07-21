@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alunosvetor</title>
+</head>
+
+<body>
+    <!--Crie um programa no qual o usuário vai cadastrando nomes de alunos.
+Porém, na medida que vai cadastrando, ele vai aparecendo um abaixo do outro na ordem inversa em que foram cadastrados (ou seja, o último sempre fica no topo, o penúltimo em abaixo dele e assim por diante).
+  -->
+    Informe nome dos alunos<input placeholder="ex João" id="ipt_nome" type="text"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button><br><br>
+    <button onclick="mostrar()">mostrar</button><br><br>
+    
+   
+    <div id="div_mostrar"></div>
+   
+</body>
+
+</html>
+<script>
+     var vt_nome= [];
+    function cadastrar() {
+        vt_nome.push(ipt_nome.value);
+        ipt_nome.value = '';
+    }
+    function mostrar() {
+        div_mostrar.innerHTML = "";
+            for (var index = -1; index < vt_nome.length; index-- ) {
+                div_mostrar.innerHTML += `${vt_nome[index]}<br>`;
+
+            }  
+        }
+            </script>

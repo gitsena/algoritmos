@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio</title>
+</head>
+<body>
+    <div id="div_inicial" style="display: block;">
+    <h1>altura desejadas para pilotos</h1>
+    <br><br>
+altura inicial:
+<input id="inp_altura_inicial_p" placeholder="altura inicial">
+<br><br>
+altura final:
+<input id="inp_altura_final_p" placeholder="altura final">
+<br><br>
+<br><br>
+<h1>altura desejadas para jogadores de basquete</h1>
+<br><br>
+altura inicial:
+<input id="inp_altura_inicial_j" placeholder="altura inicial">
+<br><br>
+altura final:
+<input id="inp_altura_final_j" placeholder="altura final">
+<br><br>
+<button onclick="validar()">validar</button>
+</div>
+<DIV id="div_dois" style="display: none;">
+
+
+    <h1>Processo de Seleção de novos atletas</h1>
+    <br>
+    <h2>Critério de Seleção de piloto – altura entre 9,99 até 9,99</h2>
+    <h2>Critério de Seleção de jogador de basquete – altura entre 9,99 até 9,99</h2>
+</DIV>
+
+ 
+</body>
+</html>
+<script>
+    function validar(){
+        var altura_int_p = inp_altura_inicial_p.value
+        var altura_fin_p = inp_altura_final_p.value
+    
+        var altura_int_j = inp_altura_inicial_j.value
+        var altura_fin_j = inp_altura_final_j.value
+
+
+        if (altura_int_p < 1.0 && altura_fin_p < altura_int_p
+        && altura_int_j < 1.5 && altura_fin_j < altura_int_j)
+        {alert(`NÃO SEGUIR EM FRENTE`)
+        }else (
+            div_inicial.style.display = 'none')
+            div_dois.style.display = 'block'
+    }
+
+
+
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>time</title>
+</head>
+
+<body>
+    <h3>Brincando com os times</h3>
+    <button onclick="frase()">Alterar Frase</button>
+    <button onclick="alt_time()">Alterar Time</button>
+    <button onclick="voltar()">voltar frase</button>
+    <br><br>
+    <div id="div_time"> o <b style="color: rgb(231, 25, 104);">Juventos</b>
+        é o melhor time de São Paulo
+    </div>
+    
+</body>
+
+</html>
+<script>
+    function frase() {
+        div_time.innerHTML = 'o <b style="color: rgb(243, 245, 240); background-color: chartreuse;"> palmeiras</b> que é o melhor time de São Paulo';
+    }
+    function alt_time() {
+        b_time.innerHTML = 'Palmeiras';
+    }
+    function voltar() {
+        div_time.innerHTML = 'o <b style="color: rgb(231, 25, 104);"> Juventus</b>é o melhor time de São Paulo'
+    }
+</script>

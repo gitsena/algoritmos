@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Crie um programa que vá contando a idade do usuário e descrevendo sua fase na vida, considerando que:
+- Primeira Infância: 0 a 4 anos
+- Pré-escolar: + de 4 aos 6 anos
+- Segunda Infância: + de 6 aos 10 anos
+- Adolescência: + de 10 aos 18 anos
+- Adulto: + de 18 até os 50 anos
+- Melhor idade: + de 50 anos até 100 anos
+- Matusalém: + de 100 anos
+Assim, sua página HTML deve solicitar a idade do usuário. Na medida que for digitando, 
+deve aparecer uma contagem de idade e indicação de fase da vida abaixo como neste exemplo:
+   0 anos (Primeira Infância)
+   1 anos (Primeira Infância)
+   2 anos (Primeira Infância)
+   3 anos (Primeira Infância)
+   4 anos (Primeira Infância)
+   5 anos (Pré-escolar)
+   6 anos (Pré-escolar)
+   7 anos (Segunda Infância)
+A última linha deve ser a idade informada. -->
+    Insira sua idade:<input id="idade" type="text">
+    <button onclick="mostrar( )">mostrar</button>
+    <div id="div_frase"></div>
+</body>
+
+</html>
+<script>
+    function mostrar() {
+        var frase1 = "anos Primeira Infância";
+        var frase2 = "anos Pré-escolar";
+        var frase3 = "anos Segunda Infância";
+        var frase4 = "anos Adolescência";
+        var frase5 = "anos Adulto";
+        var frase6 = "anos Melhor";
+        var frase7 = "anos Matusalém";
+        for (var contador = 0; contador <= idade.value; contador++) {
+            if (idade.value == "") {
+                alert("insira uma idade!")
+            }
+            else if (contador >= 4 && contador <= 6) {
+                div_frase.innerHTML += `${contador} ${frase1 ++}`;
+            }
+        }
+    }
+</script>

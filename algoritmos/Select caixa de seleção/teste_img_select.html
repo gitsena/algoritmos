@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 style="color: rgb(26, 15, 128);">Notas do Aluno</h2>
+    Entre com o nome do aluno: <input id='nome_aluno' type="text">
+    <br><br>
+    <select id="sel_foto" onchange="mostrar()">
+        <option selected disabled value="">Escolha sua imagem </option>
+        <option value="freeza.jpg">um</option>
+        <option value="goku.jpg">dois</option>
+    </select>
+        <img src='' id='img_foto' style="height: 150px;">
+</body>
+</html>
+<script>
+function mostrar(){
+img_foto.src = sel_foto.value;
+}
+</script>

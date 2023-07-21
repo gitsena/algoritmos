@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salario</title>
+</head>
+
+<body>
+    <H2>Calcular Salario</H2>
+    SALARIO: <input id="salario" type="text"><br></br>
+
+    <button onclick="calcular()"> Calcular Descontos</button>
+    <div id=cal_sal></div>
+</body>
+
+</html>
+
+<script>
+    function calcular() {
+        var INSS = Number (salario.value) * 0.1
+        var IR = Number (salario.value) * 0.2
+        var total_desconto = INSS + IR
+        var sal_atual = Number (salario.value) - total_desconto
+        cal_sal.innerHTML = `INSS: <b>R$ ${INSS}</b><br> IR: <b>R$ ${IR}</b></br> Total de descontos: <b>R$ ${total_desconto}</b></br> Seu salário após os descontos será de: <U><b>R$ ${sal_atual}</b></U>`;
+   
+}
+
+</script>

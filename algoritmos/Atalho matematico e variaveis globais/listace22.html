@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 22</title>
+</head>
+<body>
+    
+<!-- por padrão, os elementos possuem o display BLOCK -->
+<div id="div_formulario">
+    <input id="ipt_zn" placeholder="ZN" type="text"> <br>
+    <input id="ipt_zl" placeholder="ZL" type="text"> <br>
+    <input id="ipt_zs" placeholder="ZS" type="text"> <br>
+    <input id="ipt_zo" placeholder="ZO" type="text"> <br>
+
+    <button onclick="carregar()">Carregar Agenda</button>
+</div>
+
+<!-- por padrão, os elementos possuem o display BLOCK -->
+<div id="div_resultado" style="display: none;">
+    Entregas ZN: <span id="span_zn"></span> <br>
+    Entregas ZL: <span id="span_zl"></span> <br>
+    Entregas ZS: <span id="span_zs"></span> <br>
+    Entregas ZO: <span id="span_zo"></span> <br>
+    Entregas restantes: <span id="span_total"></span> <br>
+    
+    <button onclick="entregar_zl()">Entregar ZL</button>
+    <button onclick="entregar_zs()">Entregar ZS</button>
+    <button onclick="entregar_zn()">Entregar ZN</button>
+    <button onclick="entregar_zo()">Entregar ZO</button>
+</div>
+
+</body>
+</html>
+
+<script>
+
+    function carregar() {
+        ax_zn = Number(ipt_zn.value);
+        ax_zl = Number(ipt_zl.value);
+        ax_zo = Number(ipt_zo.value);
+        ax_zs = Number(ipt_zs.value);
+
+        ax_total = ax_zn + ax_zl + ax_zo + ax_zs;
+
+        span_zn.innerHTML = ax_zn;
+        span_zl.innerHTML = ax_zl;
+        span_zo.innerHTML = ax_zo;
+        span_zs.innerHTML = ax_zs;
+        span_total.innerHTML = ax_total;
+
+        div_formulario.style.display = "none";
+        div_resultado.style.display = "block";
+    }
+
+    var ax_zn = 0;
+    var ax_zl = 0;
+    var ax_zo = 0;
+    var ax_zs = 0;
+    var ax_total = 0;
+
+    function entregar_zl() {
+        ax_zl -= 1;
+        span_zl.innerHTML = ax_zl; 
+        subtrair_total();    
+    }
+    
+    function entregar_zn() {
+        ax_zn -= 1;
+        span_zn.innerHTML = ax_zn; 
+        subtrair_total();    
+    }
+    
+    function entregar_zs() {
+        ax_zs--;
+        span_zs.innerHTML = ax_zs; 
+        subtrair_total();    
+    }
+    
+    function entregar_zo() {
+        ax_zo--;
+        span_zo.innerHTML = ax_zo; 
+        subtrair_total();    
+    }
+
+    function subtrair_total() {
+        ax_total--;
+        span_total.innerHTML = ax_total;
+    }
+    
+</script>

@@ -1,0 +1,49 @@
+<center>
+    <!DOCTYPE html>
+    <html lang="pt">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Media de gols</title>
+    </head>
+
+    <body>
+        <!--  0.2<        0.2 - 0.6           >0.6 
+else(media < 0.2)   if(media >= 0.2)  if (media > 0.6)
+-->
+       <h2 style="font-family: sans-serif; color: rgba(27, 10, 90, 0.274);">Média de Gols</h2>
+        <div style="background-color: rgba(100, 148, 237, 0.356);width: 600px; border: radius 12px;;">
+            Quantidade de partidas:
+            <input id='qtd_partida' type="text" placeholder="Digite a quantidade de partidas">
+            <br><br>
+            Quantidade de gols:
+            <input id='qtd_gols' type="text" placeholder="Digite a quantidade de gols">
+            <br><br>
+            <i style="color: rgba(7, 10, 17, 0.904);">SUA MÉDIA É: </i>
+            <br>
+            <button style="background-color: rgb(18, 70, 70); bottom: 5px; border-radius: 10px; color: cornsilk;"
+                onclick="mostrar()">MOSTRAR</button>
+            <br>
+            <div id="div_media"></div>
+    </body>
+
+    </html>
+
+    <script>
+        function mostrar() {
+            var media_de_gols = qtd_gols.value / qtd_partida.value;
+            if (media_de_gols > 0.6) {
+                alert('PARABENS!!! ATACANTE DE FUTURO');
+            }
+            else if (media_de_gols < 0.2) {
+                alert('OPA, INFELISMENTE ESTÁ ABAIXO DA MEDIA');
+            }
+            else {
+                alert('ATACANTE MEDIANO');
+            }
+        }
+    </script>
+    </div>
+</center>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex14</title>
+</head>
+
+<body>
+    <h2>Execício 14</h2>
+    <button onclick="iniciar()">Iniciar</button>
+    <div id="div_luta" style="display: none;">
+        <img src="freeza.jpg" onclick="lutador1()" style="height: 100px;">
+        <div id="div_vida_lutador1" style="background-color: pink; height: 30px; width: 100%;"></div>
+        Golpes sofridos pelo lutador 1: <b id="b_golpes_lutador1">0</b>
+        <br><br>
+        <img src="goku.jpg" onclick="lutador2()" style="height: 100px;">
+        <div id="div_vida_lutador2" style="background-color: blue; height: 30px; width: 100%;"></div>
+        Golpes sofridos pelo lutador 2: <b id="b_golpes_lutador2">0</b>
+    </div>
+    
+</body>
+
+</html>
+<script>
+    var ax_golpe_lutador1 = 0;
+    var ax_golpe_lutador2 = 0;
+    var ax_vida_lutador1 = 100;
+    var ax_vida_lutador2 = 100;
+
+    function iniciar() {
+        ax_golpe_lutador1 = 0;
+        ax_golpe_lutador2 = 0;
+        ax_vida_lutador1 = 100;
+        ax_vida_lutador2 = 100;
+        div_luta.style.display = 'block'
+        b_golpes_lutador1.innerHTML = ax_golpe_lutador1;
+        div_vida_lutador1.style.width = ax_vida_lutador1 + '%';
+        b_golpes_lutador2.innerHTML = ax_golpe_lutador2;
+        div_vida_lutador2.style.width = `${ax_vida_lutador2}%`;
+    }
+    function lutador1() {
+        ax_golpe_lutador1 += 1;
+        ax_vida_lutador1 -= 5;
+        b_golpes_lutador1.innerHTML = ax_golpe_lutador1;
+        div_vida_lutador1.style.width = ax_vida_lutador1 + '%'
+    }
+    function lutador2() {
+        ax_golpe_lutador2 ++;
+        ax_vida_lutador2 -= 5;
+        b_golpes_lutador2.innerHTML = ax_golpe_lutador2;
+        div_vida_lutador2.style.width = `${ax_vida_lutador2}%`;
+    }
+</script>

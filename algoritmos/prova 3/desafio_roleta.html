@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desafio roleta</title>
+</head>
+
+<body>
+    <input id="num" type="text">
+    Em qual número você vai apostar: <input id="num" type="text"><br><br>
+    <select id="cor">
+        <option disabled selected value="">Qual cor você vai apostar?</option>
+        <option value="vermelha">Vermelho</option>
+        <option value="amarelo">Amarelo</option>
+        <option value="verde">Verde</option>
+    </select><br><br>
+    Qual o valor da sua aposta por rodada: <input id="valor" type="text"><br><br>
+    Quantas rodadas você quer participar: <input id="rodadas" type="text"><br><br>
+    <button onclick="jogar()">GO</button><br>
+<div id="div_mostrar"></div>
+</body>
+
+</html>
+<script>
+    function jogar() {
+        var ax_valor = Number(valor.value).tofixed(2)
+        var ax_num = Number(num.value)
+for(var contador = 1; contador <= 36; contador ++){
+    var sorteio = (Math.random()*100).toFixed();
+    div_mostrar.innerHTML += `Sua aposta de R$ ${ax_valor} por rodada foi no número ${num.value} e na cor ${cor.value}<br> `
+if(cor.value == "vermelha" && sorteio < ax_num ){
+    div_mostrar.innerHTML += `${contador}º sorteio – cor ${cor.value}, número ${Sorteio} – você ganhou 2,00 seu saldo ficou em R$ 2,00`
+}
+`${contador}º sorteio – cor vermelha, número 12 – você ganhou 2,00 seu saldo ficou em R$ 2,00
+2º sorteio – cor amarela, número 18 – você perdeu R$ 10,00 saldo ficou em R$ -8,00
+3º sorteio – cor verde, número 22 – você ganhou R$ 30,00 saldo ficou em R$ 22,00
+4º sorteio – cor verde, número 1 – você perdeu R$ 10,00 saldo ficou em R$ 12,00
+5º sorteio – cor vermelho, número 22 – Parabéns!!! Você ganhou R$ 100,00 saldo ficou em R$ 112,00
+6º sorteio – cor amarela, número 5 – você perdeu R$ 10,00 saldo ficou em R$ 102,00
+
+Parabéns você ganhou R$ 102,00, retire seu dinheiro no caixa
+`
+}
+    }
+</script>

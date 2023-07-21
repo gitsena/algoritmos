@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculo automático de Média</h1>
+    Somativo das Notas:  <span id="soma">0</span><br><br>
+    Total das Notas:  <span id="total">0</span><br><br>
+    Médias das Notas:  <span id="media">0</span><br><br>
+    <button onclick="notas(1)">Nota1</button>
+    <button onclick="notas(2)">Nota2</button>
+    <button onclick="notas(3)">Nota3</button>
+    <button onclick="notas(4)">Nota4</button>
+    <button onclick="notas(5)">Nota5</button>
+    
+</body>
+</html>
+<script>
+    var ax_nota = 0;
+    var aluno = 0;
+function notas(par_nota){
+ax_nota = ax_nota + par_nota
+aluno ++
+
+soma.innerHTML = `${ax_nota}`;
+total.innerHTML = `${aluno}`;
+media.innerHTML = `${ax_nota / aluno}`;
+
+}
+</script>

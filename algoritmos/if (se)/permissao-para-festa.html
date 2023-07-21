@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 26 - if</title>
+</head>
+
+<body>
+
+    <h2>Permissão para entrer na festa</h2>
+
+    <input id="idade" placeholder="Digite sua idade" />
+    <button onclick="ir_festa()">Ir para festa</button>
+    <br><br>
+    <span id="resposta"></span>
+</body>
+
+</html>
+
+<script>
+    function ir_festa() {
+        
+        // O comando if executa uma comparação, um teste, uma decisão....
+        //
+        // Sua estrutura é:
+        // If (comparação) {comando(s)};
+        //      Os comandos entre as {} SOMENTE serão executados 
+        //      quando a condição  for verdadeira
+        //
+        //    Tipos de comparações:
+        //    >	    Maior que
+        //    <	    Menor que
+        //    >=	Maior ou Igual
+        //    <= 	Menor ou Igual
+        //    ==	Igual
+        //    !=	Diferente
+
+        if (idade.value <= 17) {
+            alert ('Pedir Permissão Para o Responsável');
+        }
+        ax_tot_multa = idade.value * 80;
+        resposta.innerHTML = (`#Partiu Festa`);
+
+    }
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 2</title>
+</head>
+<body>
+    <h1>Sorteio de times</h1>
+    <button onclick="sorteio()">Sortear time</button>
+    <div id="div_msg"></div>
+</body>
+<script>
+    function sorteio() {
+        var ax_num = Math.random();
+
+        if (ax_num >= 0 && ax_num < 0.25) {
+            div_msg.innerHTML = `<br> <img style="height:150px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1864px-Santos_logo.svg.png" alt="">`
+        }
+        else if (ax_num >= 0.25 && ax_num < 0.50) {
+            div_msg.innerHTML = `<br> <img style="height:150px" src="https://www.gazetaesportiva.com/wp-content/uploads/imagem/2016/08/23/01spfc.jpg" alt="">`
+        }
+        else if (ax_num >= 0.50 && ax_num < 0.75) {
+            div_msg.innerHTML = `<br> <img style="height:150px" src="https://http2.mlstatic.com/D_NQ_NP_659396-MLB31045370256_062019-O.jpg" alt="">`
+        }
+        else if (ax_num >= 0.75 && ax_num <= 1) {
+            div_msg.innerHTML = `<br> <img style="height:150px" src="https://www.pngitem.com/pimgs/m/64-647078_logo-palmeiras-png-vector-clipart-psd-simbolo-do.png" alt="">`
+        }
+    }
+</script>
+</html>

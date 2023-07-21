@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atrações</title>
+   
+</head>
+<body>
+     <!--  Faça um programa em HTML/JS que:
+
+    A) Tenha uma caixa de seleção com as opções:
+
+        - Cinema
+
+        - Teatro
+
+        - Parque
+
+        - Show
+
+    B) Ao clicar no botão "Ver atração” exiba o seguinte alerta:
+
+        - Assistir a filme "Marley & Eu" (caso esteja selecionado o Cinema),
+
+        - Assistir a peça "O Fantasma da Ópera" (caso esteja selecionado o Teatro),
+
+        - Ir ao parque "Hopi Hari" (caso esteja selecionado o Parque),
+
+        - Ouvir o show da "Lady Gaga" (caso esteja selecionado o Show),
+
+  -->
+    <h2 style="color: teal;">Atrações</h2>
+    <select id="atracao" onchange="mostrar()">
+        <option selected disabled value="">Selecione a atração... </option>
+        <option value="Assistir a filme 'Marley & Eu'">Cinema</option>
+        <option value="Assistir a peça 'O Fantasma da Ópera'">Teatro</option>
+        <option value="Ir ao parque 'Hop Hari'">Parque</option>
+        <option value="Ver o show do 'Imagine Dragon'">Show</option>
+        <option value="Ir ao evento 'Comic Con'">Evento</option>
+    </select><br><br>
+    <button onclick="ver_atracao()">VER ATRAÇÃO</button>
+
+</body>
+</html>
+
+<script>
+function ver_atracao() {
+    alert (`${atracao.value}`);
+}
+</script>

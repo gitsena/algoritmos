@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media</title>
+</head>
+
+<body>
+    <h2>Média da Nota</h2>
+    <input id="pri_nota" type="text" placeholder="Primeira Nota"><br></br>
+    <input id="seg_nota" type="text" placeholder="Segunda Nota"><br></br>
+    <button onclick="media()">Calcular Média</button>
+    <div id=div_media></div>
+
+</body>
+
+</html>
+
+<!-- var ax.n1 = number (n1.value)
+var ax.n2 = number (n2 value)
+var ax.soma = ax.n2,
+var ax.media = ax/soma/2
+-->
+
+
+<script>
+    function media() {
+
+        div_media.innerHTML += `<br>O resultado da Media é: <b> 
+        ${(Number(pri_nota.value) + Number(seg_nota.value)) / 2} </b>`;
+
+    }
+
+</script>

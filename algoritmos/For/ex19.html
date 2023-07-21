@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex-19</title>
+</head>
+
+<body>
+<h1></h1>
+    Insira sua idade:<input id="idade" type="text">
+    <button onclick="mostrar( )">mostrar</button>
+    <div id="div_frase"></div>
+</body>
+
+</html>
+<script>
+    function mostrar() {
+        var frase1 = "anos Primeira Infância";
+        var frase2 = "anos Pré-escolar";
+        var frase3 = "anos Segunda Infância";
+        var frase4 = "anos Adolescência";
+        var frase5 = "anos Adulto";
+        var frase6 = "anos Melhor";
+        var frase7 = "anos Matusalém";
+        div_frase.innerHTML = ""
+        if (idade.value == "") {
+                alert("insira uma idade!")
+        }
+        for (var contador = 0; contador <= idade.value; contador++) {
+            if (contador >= 0 && contador <= 4) {
+                div_frase.innerHTML += `${contador} ${frase1} <br>`;
+                frase1 = frase1 
+            }
+            else if (contador >= 5 && contador <= 6 ) {
+                div_frase.innerHTML += `${contador} ${frase2} <br>`;
+                frase2 = frase2
+            }
+            else if (contador >= 7 && contador <= 10 ) {
+                div_frase.innerHTML += `${contador} ${frase3} <br>`;
+                frase3 = frase3
+            }
+            else if (contador >= 11 && contador <= 18 ) {
+                div_frase.innerHTML += `${contador} ${frase4} <br>`;
+                frase4 = frase4
+            }
+            else if (contador >= 19 && contador <= 50 ) {
+                div_frase.innerHTML += `${contador} ${frase5} <br>`;
+                frase5 = frase5
+            }
+            else if (contador >= 51 && contador <= 100 ) {
+                div_frase.innerHTML += `${contador} ${frase6} <br>`;
+                frase6 = frase6
+            }
+            else if (contador > 100 ) {
+                div_frase.innerHTML += `${contador} ${frase7} <br>`;
+                frase7 = frase7
+            }
+        }
+    }
+</script>

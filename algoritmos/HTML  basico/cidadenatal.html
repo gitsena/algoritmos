@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+
+    <!--  -->
+    <h4>Entre com sua cidade natal:</h4>
+    <input id="cidade_natal" type="text" placeholder="Cidade Natal"><br><br>
+    <input id="ano_nasc" type="text" placeholder="Ano de Nascimento"><br><br>
+
+    <button onclick="cadastrar()" style="background: rgb(15, 78, 78);color: darkorange;">Cadastrar</button>
+    <div id="div_cadastro"></div>
+
+
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {a
+
+        // alert("Você Nasceu Na Cidade De" + ' ' + cidade_natal.value + ' ' + "no ano de " + ' ' + ano_nasc.value)
+
+        div_cadastro.innerHTML += 'Você nasceu em <b>' + cidade_natal.value + '</b> ' + 'no ano de <u>' + ' ' + ano_nasc.value + "</u><br>";
+
+    }
+
+</script>

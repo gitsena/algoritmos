@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Pergunte o intervalo da altura desejada para os próximos pilotos (altura inicial e altura final de seleção) A altura inicial tem que ser maior que 1 e a altura final tem que ser maior que a altura inicial, caso contrário emitir mensagem de alerta E NÃO SEGUIR EM FRENTE.
+b) Pergunte o nome e a atura do candidato a piloto.
+c) Emitir uma das duas mensagens abaixo sem apagar as mensagens anteriores:
+            1) “O candidato XXXXX com altura de 9,99 participará do processo de seleção de piloto”, caso a altura do candidato esteja no intervalo informado.
+            2) “Infelizmente o candidato XXXXX com altura de 9,99 não atende os requisitos”, caso a altura do candidato NÃO esteja no intervalo informado. -->
+<div id="div_um" style="display: block;">
+    <h1>altura desejadas para pilotos</h1>
+    <br><br>
+    Altura inicial:
+    <input id="altura_inicial" type="text">
+    <br><br>
+    Altura final:
+    <input id="altura_final" type="text">
+    <br><br>
+    <button onclick="validar()"></button>
+</div> 
+<div id="div_dois" style="display: none;">
+    Nome candidato:<input id='nome_candidato' type="text"><br><br>
+    Altura do candidato:<input id='altura_candidato' type="text"><br><br>
+    <button onclick="mostrar()">Mostrar</button>
+</div>
+
+</body>
+
+</html>
+<script>
+     function validar(){
+        var ax_altura_in = altura_inicial.value
+        var ax_altura_fin = altura_final.value
+
+        if (ax_altura_in < 1.0 && ax_altura_fin < ax_altura_in)
+        {alert(`NÃO SEGUIR EM FRENTE`)
+        }else (
+            div_um.style.display = 'none')
+            div_dois.style.display = 'block'
+    }
+
+</script>
+
+
+

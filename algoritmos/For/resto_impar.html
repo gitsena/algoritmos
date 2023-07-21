@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira um numero inferior<input id= "num_inf" type="text"><br><br>
+    insira um numero superior<input id= "num_sup" type="text"><br><br>
+    <button onclick="mostrar()">Mostrar</button><br>
+    <div  id="div_msg"></div>
+</body>
+</html>
+<script>
+    function mostrar(){
+    div_msg.innerHTML = "";
+    for (var contador = Number(num_inf.value); contador <= num_sup.value; contador ++){
+        if (contador % 2 == 1)
+        div_msg.innerHTML += `${contador} <br>`
+    }
+}
+</script>

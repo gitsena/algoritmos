@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qts-numero</title>
+</head>
+
+<body>
+    Insira quantos numeros deseja sortear:<input id="qtd_num" type="text"
+        placeholder="entre 10 e 100"><br><br>
+    <button onclick="mostrar()">Mostrar</button><br>
+    <div id="div_mostrar"></div>
+</body>
+
+</html>
+<script>
+    function mostrar() {
+        var sortear = 0
+        var ax_num = Number(qtd_num.value)
+        div_mostrar.innerHTML = " ";
+        if (ax_num < 10 || ax_num > 100) {
+            alert("Numero invallido!");
+        }
+        else {
+            for (var num = 0; num <= ax_num; num++) {
+                var sortear = (Math.random() * 100).toFixed(0);
+
+                if (sortear % 7 == 0) {
+                    div_mostrar.innerHTML += `<b>${sortear}</b><br>`;
+                    break
+                }
+                else {
+                    div_mostrar.innerHTML += `${sortear}<br>`;
+                    
+                }
+            }
+        }
+    }
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELEIÇÃO AVENGERS</title>
+</head>
+
+<body>
+    <h4>Quem é o maior Vingador?</h4>
+    <h3 style="color: rgb(238, 40, 5);">Iron Man?</h3>
+    <h5>"Se desejam um gênio, bilionário, playboy, filantropo, votem aqui:" </h5>
+    <input id="iron" type="text" placeholder="Eu sou o Homem de Ferro!">
+
+    <h5>"Entendedores de referências votem aqui:" </h5>
+    <h3 style="color: rgb(44, 22, 240);">Capitão America?</h3>
+    <input id="cap" type="text" placeholder="Vingadores, Avante!">
+
+    <h4>Votos em Branco</h4>
+    <input id="branco" type="text" placeholder="Não desperdice seu voto!">
+
+    <h4>Votos Nulo</h4>
+    <input id="nulo" type="text" placeholder="Tem certeza?"><br><br>
+
+    <button onclick="resultado()">Resultado da Eleição</button><br><br>
+    <div id="vingador"></div><br><br>
+    <div id="pri_barra" style="background-color: red;height: 30px;width:0;float: left;"></div>
+    <div id="seg_barra" style="background-color: blue;height: 30px;width:0;float: left;"></div>
+    <div id="ter_barra" style="background-color: rgb(156, 37, 192);height: 30px;width:0;float: left;"></div>
+</body>
+
+</html>
+
+<script>
+    function resultado() {
+        var total = Number(iron.value) + Number(cap.value) + Number(branco.value) + Number(nulo.value)
+        var man = iron.value * 100 / total
+        var america = cap.value * 100 / total
+        var n_votos = Number(branco.value) + Number(nulo.value)
+        var vbn = n_votos * 100 / total
+
+        vingador.innerHTML = `Total de votos: ${total} <br>
+        Iron Man: ${man}% (${iron.value} Votos) <br>
+        Capitão America: ${america}% (${cap.value} Votos) <br>
+        Invalidos 'THANOS': ${vbn}% (${n_votos} Votos)`
+        pri_barra.style.width = `${man}%`
+        seg_barra.style.width = `${america}%`
+        ter_barra.style.width = `${vbn}%`
+
+    }
+</script>

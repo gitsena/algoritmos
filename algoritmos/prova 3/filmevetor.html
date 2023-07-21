@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filmevetor</title>
+</head>
+
+<body>
+    <!--Crie um programa no qual o usuário informa os nomes dos filmes que mais gosta. Ele digita e clica em "Cadastrar".
+Na medida em que vai cadastrando, os filmes vão aparecendo um abaixo do outro abaixo do botão.
+OBS. Tem que usar um vetor para guardar e mostrar os filmes. #ficaadica – Use uma estrutura de repetição (for/while) para mostrar os filmes na página.
+  -->
+    Informe os filmes que mais gosta<input placeholder="ex Vingadores" id="ipt_filme" type="text"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button><br><br>
+    <button onclick="mostrar()">mostrar</button><br><br>
+    
+   
+    <div id="div_mostrar"></div>
+   
+</body>
+
+</html>
+<script>
+     var vt_filme= [];
+    function cadastrar() {
+        vt_filme.push(ipt_filme.value);
+        ipt_filme.value = '';
+    }
+    function mostrar() {
+        div_mostrar.innerHTML = "";
+            for (var index = 0; index < vt_filme.length; index++ ) {
+                div_mostrar.innerHTML += `${vt_filme[index]}<br>`;
+
+            }  
+        }
+            </script>
+           

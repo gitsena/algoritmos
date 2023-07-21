@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2 style="color: rgb(26, 15, 128);">Notas do Aluno</h2>
+    Entre com o nome do aluno: <input id='nome_aluno' type="text">
+    <br><br>
+    <select id="notas_1">
+        <option selected disabled value="">Escolha sua primeira nota </option>
+        <option value="1">um</option>
+        <option value="2">dois</option>
+        <option value="3">tres</option>
+    </select>
+        <br><br>
+    <select id="notas_2">
+        <option selected disabled value="">Escolha sua segunda nota </option>
+        <option value="1">1 á 3</option>
+        <option value="2">4 á 6</option>
+        <option value="3">7 á 10</option>
+    </select>
+        <br><br>
+    <select id="notas_3">
+        <option selected disabled value="">Escolha sua terceira nota </option>
+        <option value="1">1 á 3</option>
+        <option value="2">4 á 6</option>
+        <option value="3">7 á 10</option>
+    </select>
+        <br><br>
+        <button onclick="mostrar()">M0STRAR NOTA</button>
+    <div id="div_nota"></div>
+</body>
+
+</html>
+
+<script>
+    function mostrar(){
+        var soma_total = Number(notas_1.value) + Number(notas_2.value) + Number(notas_3.value)
+        var media_nota = soma_total / 3
+        div_nota.innerHTML = ('O aluno  ' + nome_aluno.value + ' ficou com a media ' + `${media_nota.toFixed(2)}` + ' e a soma total de suas notas é ' + `${soma_total}`);
+    
+    if (media_nota >= 4) {
+        alert ('PARABENS!!!! VOCÊ FOI APROVADO!');
+    }
+    else {(media_nota <= 3) 
+        alert ('INFELIZMENTE VOCÊ FOI REPROVADO');
+    }
+}
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex3vetormoradia</title>
+</head>
+
+<body>
+    <!-- Crie um programa onde o usuário vá cadastrando os bairros para onde já morou. Ele digita o nome do lugar e vai clicar em "Cadastrar bairro".
+Deve haver um outro campo, onde ele digita apenas um número, indicando o local para onde morou, a partir do número 1 (porque os usuários comuns contam as coisas a partir do 1) e clica em "Relembrar moradia". Se ele informar 1, exiba o primeiro bairro cadastrado e assim por diante.
+Porém, se ele informar um número maior do que a quantidade de bairros, exiba: "Você ainda não morou num Xº bairro!"
+  -->
+    Informe os bairros que ja morou?<input placeholder="ex jd campanario" id="ipt_bairro" type="text"><br><br>
+    Informe o numero da possiçao do bairro morou ?<input placeholder="ex 3" id="ipt_num" type="text"><br><br>
+    <button onclick="cadastrar()">Cadastrar</button><br><br>
+    <button onclick="moradia()">Relembrar moradia</button>
+   
+    <div id="div_mostrar"></div>
+   
+</body>
+
+</html>
+<script>
+     var vt_morada = [];
+     function cadastrar() {
+         vt_morada.push(ipt_bairro.value);
+         ipt_bairro.value = '';
+         ipt_num.value = '';
+         
+        }
+        function moradia() {
+        var ax_ipt_num = Number(ipt_num.value)
+        
+            if (vt_morada == "" || ax_ipt_num == "" ) {
+                alert ( `erro`)
+            }  
+             else if (ax_ipt_num > vt_morada.length ) {
+                alert ( `erro `)
+            } 
+           
+            else{
+                div_mostrar.innerHTML += `${ax_ipt_num} o bairro  que você morou é ${vt_morada[ax_ipt_num - 1]}<br>`;
+            }
+
+        }
+</script>

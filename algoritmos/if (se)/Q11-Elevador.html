@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q11-Elevador</title>
+</head>
+
+<body>
+    <!-- a) Solicite a quantidade de homens que entraram no elevador
+   Solicite a quantidade de mulher que entraram no elevador
+   Ao clicar em "Analisar peso", calcule o peso estimado sendo: homens x 80 somado com mulheres x 60
+   Exiba na página a mensagem "Este elevador suporta 800 Kg e o peso estimado desta lotação é de xxxkg";
+   Se o peso estimado for maior que 800, exibir também a mensagem "Será necessário descer alguém para que o elevador se movimente", 
+   na cor azul. -->
+    <h2>Calculando o peso médio no elevador</h2>
+    <input id="qtd_homens" type="text" placeholder="quantidade de homens:"><br><br>
+    <input id="qtd_mulheres" type="text" placeholder="quantidade de mulheres:"><br><br>
+    <button onclick="analisar_peso()">ANALIZAR PESO</button><br>
+    <div id="div_analisar_peso"></div>
+</body>
+
+</html>
+<script>
+    function analisar_peso() {
+        var peso_homens = Number(qtd_homens.value * 80)
+        var peso_mulheres = Number(qtd_mulheres.value * 60)
+        var peso_estimado = peso_homens + peso_mulheres
+        div_analisar_peso.innerHTML = ('Este elevador suporta 800 Kg e o peso estimado desta lotação é de ' + `${peso_estimado} Kg`)
+
+        if (peso_estimado > 800) {
+            alert(`${peso_estimado} Kg ATENÇÃO EXCESSO DE PESO!`)
+            div_analisar_peso.innerHTML = (`<span style="color: blue;">Será necessário descer alguém para que o elevador se movimente</span>`)
+        }
+    }
+</script>
